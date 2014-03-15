@@ -1,23 +1,26 @@
 {
-	"name": "ScrollWatch",
-	"version": "0.1.0",
-	"author": "Evan Dull <evandull@gmail.com>",
-	"description": "Easily add lazy loading, infinite scrolling, or any other dynamic interaction based on scroll position (with no dependencies).",
-	"main": "./dist/ScrollWatch.min.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/edull24/ScrollWatch.git"
-	},
-	"keywords": [
-		"javascript",
-		"lazy load",
-		"infinite scroll",
-		"library",
-		"scroll watch",
-		"scroll"
-	],
-	"devDependencies": {
-		"grunt": "~0.4.4"
-	},
-	"license": "MIT"
+  "name": "ScrollWatch",
+  "version": "0.1.0",
+  "author": "Evan Dull <evandull@gmail.com>",
+  "description": "Easily add lazy loading, infinite scrolling, or any other dynamic interaction based on scroll position (with no dependencies).",
+  "main": "./dist/ScrollWatch.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edull24/ScrollWatch.git"
+  },
+  "keywords": [
+    "javascript",
+    "lazy load",
+    "infinite scroll",
+    "library",
+    "scroll watch",
+    "scroll"
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-uglify": "^0.4.0",
+    "load-grunt-tasks": "^0.4.0",
+    "grunt-contrib-copy": "^0.5.0"
+  },
+  "license": "MIT"
 }
