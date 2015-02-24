@@ -7,6 +7,7 @@ var pkg = require('../../package.json');
 gulp.task('scripts', ['clean'], function() {
 
 	return gulp.src('./src/*.js')
+		.pipe(plugins.umd())
 		.pipe(plugins.rename({extname: '-' + pkg.version + '.js'}))
 		.pipe(gulp.dest('./dist'))
 		.pipe(plugins.rename({extname: '.min.js'}))
