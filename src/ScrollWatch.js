@@ -464,8 +464,16 @@ var ScrollWatch = function(opts) {
 			clearDebounceTimer.call(this);
 
 			data.debounceTimer = setTimeout(function() {
+				
+				// Only check the viewport if something has changed. Fixes issues
+				// when using gestures to on a page that doesn't need to scroll.
+				// An event would still fire, but the position didn't change
+				// because the window/container "bounced" back into place.
+				if (hasScrollPositionChanged.call(this, 'x') || hasScrollPositionChanged.call(this, 'y')) {
 
-				checkViewport.call(this, eventType);
+					checkViewport.call(this, eventType);
+					
+				}
 
 			// Bind the instance to the function.
 			}.bind(this), debounce);
