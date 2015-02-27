@@ -85,20 +85,30 @@ var saveElements = function() {
 var saveScrollPosition = function() {
 
 	instanceData[this._id].lastScrollPosition = getScrollPosition.call(this);
-
+	
 };
 
 var checkViewport = function(eventType) {
 
 	checkElements.call(this, eventType);
 	checkInfinite.call(this, eventType);
-	saveScrollPosition.call(this);
+	
+	// Chrome does not return 0,0 for scroll position when reloading a page
+	// that was previously scrolled. To combat this, we will leave the scroll
+	// position at the default 0,0 when a page is first loaded.
+	if (eventType !== initEvent) {
+		
+		saveScrollPosition.call(this);
+	
+	}
 
 };
 
 // Determine if the watched elements are viewable within the
 // scrolling container.
 var checkElements = function(eventType) {
+	
+	// console.log('checkElements eventType: ' + eventType);
 
 	var data = instanceData[this._id];
 	var len = data.elements.length;
@@ -269,10 +279,7 @@ var getViewportSize = function() {
 // Get the scrollbar position of the scrolling container.
 var getScrollPosition = function() {
 
-	var pos = {
-			left: 0,
-			top: 0
-		};
+	var pos = {};
 	var container;
 
 	if (isContainerWindow.call(this)) {
@@ -439,8 +446,9 @@ var ScrollWatch = function(opts) {
 	instanceData[this._id] = {
 
 		config: {},
+		// The elements to watch for this instance.
 		elements: [],
-		lastScrollPosition: {},
+		lastScrollPosition: {top: 0, left: 0},
 		debounceTimer: null,
 		isInfiniteScrollPaused: false,
 
@@ -448,10 +456,10 @@ var ScrollWatch = function(opts) {
 		// to 'this', give each instance it's own event handler.
 		handler: function(e) {
 
-			var data = instanceData[this._id],
-				config = data.config,
-				eventType = e.type,
-				debounce = eventType === 'scroll' ? config.scrollDebounce : config.resizeDebounce;
+			var data = instanceData[this._id];
+			var config = data.config;
+			var eventType = e.type;
+			var debounce = eventType === 'scroll' ? config.scrollDebounce : config.resizeDebounce;
 
 			clearDebounceTimer.call(this);
 
@@ -471,9 +479,10 @@ var ScrollWatch = function(opts) {
 	saveContainerElement.call(this);
 	addListeners.call(this);
 	saveElements.call(this);
-	saveScrollPosition.call(this);
-	checkElements.call(this, initEvent);
-	checkInfinite.call(this, initEvent);
+	checkViewport.call(this, initEvent);
+	// saveScrollPosition.call(this, true);
+	// checkElements.call(this, initEvent);
+	// checkInfinite.call(this, initEvent);
 
 };
 
