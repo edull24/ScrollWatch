@@ -85,21 +85,21 @@ var saveElements = function() {
 var saveScrollPosition = function() {
 
 	instanceData[this._id].lastScrollPosition = getScrollPosition.call(this);
-	
+
 };
 
 var checkViewport = function(eventType) {
 
 	checkElements.call(this, eventType);
 	checkInfinite.call(this, eventType);
-	
+
 	// Chrome does not return 0,0 for scroll position when reloading a page
 	// that was previously scrolled. To combat this, we will leave the scroll
 	// position at the default 0,0 when a page is first loaded.
 	if (eventType !== initEvent) {
-		
+
 		saveScrollPosition.call(this);
-	
+
 	}
 
 };
@@ -107,7 +107,7 @@ var checkViewport = function(eventType) {
 // Determine if the watched elements are viewable within the
 // scrolling container.
 var checkElements = function(eventType) {
-	
+
 	// console.log('checkElements eventType: ' + eventType);
 
 	var data = instanceData[this._id];
@@ -438,59 +438,68 @@ var mergeOptions = function(opts) {
 
 var ScrollWatch = function(opts) {
 
-	Object.defineProperty(this, '_id', {value: instanceId++});
+	// Protect against missing new keyword.
+	if (this instanceof ScrollWatch) {
 
-	// Keep all instance data private, except for the '_id', which will
-	// be the key to get the private data for a specific instance.
+		Object.defineProperty(this, '_id', {value: instanceId++});
 
-	instanceData[this._id] = {
+		// Keep all instance data private, except for the '_id', which will
+		// be the key to get the private data for a specific instance.
 
-		config: {},
-		// The elements to watch for this instance.
-		elements: [],
-		lastScrollPosition: {top: 0, left: 0},
-		debounceTimer: null,
-		isInfiniteScrollPaused: false,
+		instanceData[this._id] = {
 
-		// In order to remove listeners later and keep a correct reference
-		// to 'this', give each instance it's own event handler.
-		handler: function(e) {
+			config: {},
+			// The elements to watch for this instance.
+			elements: [],
+			lastScrollPosition: {top: 0, left: 0},
+			debounceTimer: null,
+			isInfiniteScrollPaused: false,
 
-			var data = instanceData[this._id];
-			var config = data.config;
-			var eventType = e.type;
-			var debounce = eventType === 'scroll' ? config.scrollDebounce : config.resizeDebounce;
+			// In order to remove listeners later and keep a correct reference
+			// to 'this', give each instance it's own event handler.
+			handler: function(e) {
 
-			clearDebounceTimer.call(this);
+				var data = instanceData[this._id];
+				var config = data.config;
+				var eventType = e.type;
+				var debounce = eventType === 'scroll' ? config.scrollDebounce : config.resizeDebounce;
 
-			data.debounceTimer = setTimeout(function() {
-				
-				// Only check the viewport if something has changed. Fixes issues
-				// when using gestures to on a page that doesn't need to scroll.
-				// An event would still fire, but the position didn't change
-				// because the window/container "bounced" back into place.
-				if (hasScrollPositionChanged.call(this, 'x') || hasScrollPositionChanged.call(this, 'y')) {
+				clearDebounceTimer.call(this);
 
-					checkViewport.call(this, eventType);
-					
-				}
+				data.debounceTimer = setTimeout(function() {
 
-			// Bind the instance to the function.
-			}.bind(this), debounce);
+					// Only check the viewport if something has changed. Fixes issues
+					// when using gestures to on a page that doesn't need to scroll.
+					// An event would still fire, but the position didn't change
+					// because the window/container "bounced" back into place.
+					if (hasScrollPositionChanged.call(this, 'x') || hasScrollPositionChanged.call(this, 'y')) {
 
-		// Bind the instance to the method.
-		}.bind(this)
+						checkViewport.call(this, eventType);
 
-	};
+					}
 
-	mergeOptions.call(this, opts);
-	saveContainerElement.call(this);
-	addListeners.call(this);
-	saveElements.call(this);
-	checkViewport.call(this, initEvent);
-	// saveScrollPosition.call(this, true);
-	// checkElements.call(this, initEvent);
-	// checkInfinite.call(this, initEvent);
+				// Bind the instance to the function.
+				}.bind(this), debounce);
+
+			// Bind the instance to the method.
+			}.bind(this)
+
+		};
+
+		mergeOptions.call(this, opts);
+		saveContainerElement.call(this);
+		addListeners.call(this);
+		saveElements.call(this);
+		checkViewport.call(this, initEvent);
+		// saveScrollPosition.call(this, true);
+		// checkElements.call(this, initEvent);
+		// checkInfinite.call(this, initEvent);
+
+	} else {
+
+		return new ScrollWatch(opts);
+
+	}
 
 };
 
