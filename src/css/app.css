@@ -52,9 +52,9 @@ section {
 	height: 240px;
 	background-color: #fff;
 	border-radius: 50%;
-	animation-name: move-magnifier;
+	/*animation-name: move-magnifier;
 	animation-duration: 1s;
-	animation-delay: .5s;
+	animation-delay: .5s;*/
 }
 
 /* Magnifier handle.*/
@@ -85,11 +85,11 @@ section {
 }
 
 .header-text {
-	opacity: 0;
+	/*opacity: 0;
 	animation-name: show-header-text;
 	animation-duration: .5s;
 	animation-delay: 1.5s;
-	animation-fill-mode: forwards;
+	animation-fill-mode: forwards;*/
 }
 
 .header-title {
@@ -104,7 +104,7 @@ section {
 	margin: 40px 0;
 }
 
-@keyframes move-magnifier {
+/*@keyframes move-magnifier {
 	from {}
 	25% {
 		transform: translate(-50px, -50px);
@@ -120,7 +120,7 @@ section {
 	to {
 		opacity: 1;
 	}
-}
+}*/
 
 .download-btn {
 	color: #fff;
@@ -158,4 +158,8 @@ section {
 		width: auto;
 	}
 
+}
+
+.hidden {
+	visibility: hidden;
 }
