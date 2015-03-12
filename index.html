@@ -4,9 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ScrollWatch Demo</title>
-	<link rel="stylesheet" href="docs/css/vendor/normalize.css">
-	<link rel="stylesheet" href="docs/css/vendor/prism.css">
-	<link rel="stylesheet" href="docs/dist/css/app.css">
+	<link rel="stylesheet" href="src/css/vendor/normalize.css">
+	<link rel="stylesheet" href="src/css/vendor/prism.css">
+	<link rel="stylesheet" href="dist/css/app.css">
   </head>
   <body>
 
@@ -36,12 +36,12 @@
 		<ul class="features-list">
 			<li class="features-list-item">Watch any scrolling element, not just the window</li>
 			<li class="features-list-item">Supports multiple instances on the same page, even nested instances</li>
-			<li class="features-list-item">Be notified the first time something enters/leaves view or every time</li>
-			<li class="features-list-item">Scroll/Resize handlers are debounced, so your cpu lives to see tomorrow</li>
-			<li class="features-list-item">Pass in callbacks for when you want to respond to elements entering/leaving view</li>
+			<li class="features-list-item">Executes callbacks when elements enter/leave view</li>
+			<li class="features-list-item">Tracks the first time something enters/leaves view or every time</li>
 			<li class="features-list-item">Supports infinite scrolling out of the box</li>
-			<li class="features-list-item">No dependencies</li>
 			<li class="features-list-item">UMD wrapper for use in AMD, CommonJS or global environment</li>
+			<li class="features-list-item">Scroll/Resize handlers are debounced, so your cpu lives to see tomorrow</li>
+			<li class="features-list-item">No dependencies</li>
 			<li class="features-list-item">Modern browser support and IE10+ (IE9+ with classList.js polyfill)</li>
 			<li class="features-list-item">insert size</li>
 		</ul>
@@ -127,16 +127,6 @@
 			<!--	</dl>-->
 			<!--</section>-->
 
-	<script src="src/ScrollWatch.js"></script>
-	<script src="docs/js/vendor/prism.js"></script>
-	<script>
-		var sw = new window.ScrollWatch({
-			watchOnce: false,
-			// watchOffset: 10,
-			onElementInView: function (obj) {
-				console.log('element is in view', obj);
-			}
-		});
-	</script>
+	<script src="src/js/vendor/prism.js"></script>
   </body>
 </html>
