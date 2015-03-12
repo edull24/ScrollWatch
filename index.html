@@ -1,10 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>ScrollWatch</title>
-</head>
-<body>
-	ScrollWatch
-</body>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ScrollWatch Demo</title>
+	<link rel="stylesheet" href="docs/css/vendor/normalize.css">
+	<link rel="stylesheet" href="docs/css/vendor/prism.css">
+	<link rel="stylesheet" href="docs/dist/css/app.css">
+  </head>
+  <body>
+
+	<header class="header">
+
+		<div class="magnifier"></div>
+
+		<div class="header-text">
+
+			<h1 class="header-title">ScrollWatch</h1>
+
+			<h2 class="header-tagline">
+				Easily add lazy loading, infinite scrolling, or any other
+				dynamic interaction based on scroll position.
+			</h2>
+
+			<a href="#" class="download-btn">Download</a>
+
+		</div>
+
+	</header>
+
+	<section>
+
+		<h1>Features</h1>
+
+		<ul class="features-list">
+			<li class="features-list-item">Watch any scrolling element, not just the window</li>
+			<li class="features-list-item">Supports multiple instances on the same page, even nested instances</li>
+			<li class="features-list-item">Be notified the first time something enters/leaves view or every time</li>
+			<li class="features-list-item">Scroll/Resize handlers are debounced, so your cpu lives to see tomorrow</li>
+			<li class="features-list-item">Pass in callbacks for when you want to respond to elements entering/leaving view</li>
+			<li class="features-list-item">Supports infinite scrolling out of the box</li>
+			<li class="features-list-item">No dependencies</li>
+			<li class="features-list-item">UMD wrapper for use in AMD, CommonJS or global environment</li>
+			<li class="features-list-item">Modern browser support and IE10+ (IE9+ with classList.js polyfill)</li>
+			<li class="features-list-item">insert size</li>
+		</ul>
+
+	</section>
+
+	<section>
+
+		<h1>Basic Usage</h1>
+
+		<pre class="language-markup line-numbers"><code>&lt;!doctype html>
+&lt;html>
+&lt;head>
+&lt;/head>
+&lt;body>
+&lt;script src="ScrollWatch.js">&lt;/script>
+&lt;/body>
+&lt;/html></code></pre>
+
+	</section>
+
+	<section>
+
+		<h1>API</h1>
+
+	</section>
+
+	<footer>the footer: follow me, fork</footer>
+
+			<!-- <div class="content">
+
+				<div class="magnifier"></div>
+
+				<div class="text-content">
+
+					<h1 class="magnifier-caption">ScrollWatch</h1>
+
+					<h2 class="tag-line">
+						Easily add lazy loading, infinite scrolling, or any other
+						dynamic interaction based on scroll position.
+					</h2>
+
+					<a href="#" class="download-btn">Download</a>
+
+					<h3>Basic Usage</h3>
+
+					<pre class="line-numbers"><code class="language-javascript">var sw = new ScrollWatch();</code></pre>
+
+				</div>
+
+			</div> -->
+
+			<!--<section data-scroll-watch>-->
+
+			<!--	<dl>-->
+			<!--		<dt>container</dt>-->
+			<!--		<dd>the element that contains the elements you want to watch-->
+			<!--		(default is window)</dd>-->
+			<!--		<dt>watch</dt>-->
+					<!--<dd>a selector for the element(s) you want to watch (default [data-scroll-watch]</dd>-->
+					<!--<dt>watchOnce</dt>-->
+					<!--<dd>-->
+					<!--	true to stop watching the element after it is processed the first time.-->
+			<!--			false to always watch the element and process it every time it comes into view-->
+			<!--			(default true)-->
+			<!--		</dd>-->
+			<!--		<dt>inViewClass</dt>-->
+			<!--		<dd>class applied to elements that are in view (default scroll-watch-in-view)</dd>-->
+			<!--		<dt>scrollDebounce</dt>-->
+			<!--		<dd>-->
+			<!--			number of milliseconds to wait after a scroll event fires before-->
+			<!--			processing which elements are in view (default 200). useful to save your cpu from-->
+			<!--			getting pounded by scroll events and to avoid processing elements that the user-->
+			<!--			is going to scroll past.-->
+			<!--		</dd>-->
+			<!--		<dt>resizeDebounce</dt>-->
+			<!--		<dd>same as scrollDebounce, but for resize event (default 500)</dd>-->
+			<!--		<dt>watchOffset</dt>-->
+			<!--		<dd>number of pixels to offset the viewable area when processing elements-->
+			<!--			(default 0). for example, if a watched element is 5 pixels below the bottom of the-->
+			<!--			screen it will be considered in view if watchOffset is > 5px-->
+			<!--		</dd>-->
+			<!--	</dl>-->
+			<!--</section>-->
+
+	<script src="src/ScrollWatch.js"></script>
+	<script src="docs/js/vendor/prism.js"></script>
+	<script>
+		var sw = new window.ScrollWatch({
+			watchOnce: false,
+			// watchOffset: 10,
+			onElementInView: function (obj) {
+				console.log('element is in view', obj);
+			}
+		});
+	</script>
+  </body>
 </html>

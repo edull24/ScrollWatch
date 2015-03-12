@@ -8,3 +8,6 @@
 
 # Node Modules
 node_modules/
+
+# Vagrant
+.vagrant/
