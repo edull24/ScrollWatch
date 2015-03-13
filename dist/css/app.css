@@ -5,6 +5,7 @@ body {
 
 html {
 	box-sizing: border-box;
+	font-size: 100%;
 }
 
 *,
@@ -14,10 +15,9 @@ html {
 }
 
 body {
-	background-color: #166600;
-	color: #fff;
-	margin: 0 25px;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 1.125rem;
 }
 
 a {
@@ -26,21 +26,23 @@ a {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
+  font-weight: 200;
   font-style: normal;
   text-rendering: optimizeLegibility;
-  margin-top: 0.2rem;
-  margin-bottom: 0.5rem;
+  margin-top: .2rem;
+  margin-bottom: .5rem;
   line-height: 1.4;
 }
 
 section {
-	margin: 40px 0;
+	padding: 2.5rem 1.5625rem 0 1.5625rem;
 }
 
-/* Header */
-.header {
-	margin: 50px 0;
+.site-header,
+.site-footer {
+	background-color: #0681CD;
+	color: #fff;
+	padding: 3.125rem 1.5625rem;
 	text-align: center;
 }
 
@@ -52,9 +54,6 @@ section {
 	height: 240px;
 	background-color: #fff;
 	border-radius: 50%;
-	/*animation-name: move-magnifier;
-	animation-duration: 1s;
-	animation-delay: .5s;*/
 }
 
 /* Magnifier handle.*/
@@ -84,52 +83,26 @@ section {
 	-webkit-transform: translate(-50%, -50%);
 	    -ms-transform: translate(-50%, -50%);
 	        transform: translate(-50%, -50%);
-	background-color: #166600;
+	background-color: #0681CD;
 	border-radius: 50%;
 }
 
-.header-text {
-	/*opacity: 0;
-	animation-name: show-header-text;
-	animation-duration: .5s;
-	animation-delay: 1.5s;
-	animation-fill-mode: forwards;*/
-}
-
-.header-title {
+.site-header-title {
 	color: #fff;
 	margin-left: 4.6875rem;
 	word-break: break-all;
 	word-wrap: break-word;
 }
 
-.header-tagline {
+.site-header-tagline {
 	color: #fff;
-	margin: 40px 0;
+	margin: 2.5rem 0;
 }
 
-/*@keyframes move-magnifier {
-	from {}
-	25% {
-		transform: translate(-50px, -50px);
-	}
-	75% {
-		transform: translate(100px, -25px);
-	}
-	to {}
-}
-
-@keyframes show-header-text {
-	from {}
-	to {
-		opacity: 1;
-	}
-}*/
-
-.download-btn {
+.site-header-btn {
 	color: #fff;
 	border: 1px solid #fff;
-	padding: 15px 30px;
+	padding: .9375rem 1.875rem;
 	width: 100%;
 	display: inline-block;
 	font-size: 1.5rem;
@@ -137,14 +110,71 @@ section {
 	        transition: .4s all;
 }
 
-.download-btn:hover,
-.download-btn:focus {
+.site-header-btn:hover,
+.site-header-btn:focus {
 	background-color: #fff;
-	color: #166600;
+	color: #0681CD;
+}
+
+.features-list {
+	margin-bottom: 0;
+	padding: 0;
+	list-style-type: none;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-align-content: flex-start;
+	    -ms-flex-line-pack: start;
+	        align-content: flex-start;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 }
 
 .features-list-item {
-	margin: 10px 0;
+	color: #fff;
+	background-color: #0681CD;
+	padding: 2rem;
+	margin: .625rem;
+	border-radius: .3125rem;
+	height: 9.375rem;
+	text-align: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
+	-webkit-flex-shrink: 0;
+	    -ms-flex-negative: 0;
+	        flex-shrink: 0;
+	-webkit-flex-basis: 18.75rem;
+	    -ms-flex-preferred-size: 18.75rem;
+	        flex-basis: 18.75rem;
 }
 
 /* Medium min-width 641px */
@@ -155,11 +185,11 @@ section {
 		height: 272px;
 	}
 
-	.header-title {
+	.site-header-title {
 		margin-left: 2.5em;
 	}
 
-	.download-btn {
+	.site-header-btn {
 		width: auto;
 	}
 
@@ -167,4 +197,10 @@ section {
 
 .hidden {
 	visibility: hidden;
+}
+
+.sw-fadeInUp {
+	visibility: hidden;
+	-webkit-animation-duration: .5s;
+	        animation-duration: .5s;
 }

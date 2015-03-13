@@ -11,66 +11,77 @@
   </head>
   <body>
 
-	<header class="header">
+	<header class="site-header">
 
 		<div class="magnifier animated tada"></div>
 
-		<div class="header-text">
+		<div class="site-header-text">
 
-			<h1 class="header-title">ScrollWatch</h1>
+			<h1 class="site-header-title animated lightSpeedIn">ScrollWatch</h1>
 
-			<h2 class="header-tagline hidden">
+			<h2 class="site-header-tagline">
 				Easily add lazy loading, infinite scrolling, or any other
 				dynamic interaction based on scroll position.
 			</h2>
 
-			<a href="#" class="download-btn hidden">Download</a>
+			<a href="#" class="site-header-btn">Download</a>
 
 		</div>
 
 	</header>
 
-	<section class="hidden">
+	<section class="features">
 
-		<h1>Features</h1>
+		<h1 class="animated sw-fadeInUp">Features</h1>
 
 		<ul class="features-list">
-			<li class="features-list-item">Watch any scrolling element, not just the window</li>
-			<li class="features-list-item">Supports multiple instances on the same page, even nested instances</li>
-			<li class="features-list-item">Executes callbacks when elements enter/leave view</li>
-			<li class="features-list-item">Tracks the first time something enters/leaves view or every time</li>
-			<li class="features-list-item">Supports infinite scrolling out of the box</li>
-			<li class="features-list-item">UMD wrapper for use in AMD, CommonJS or global environment</li>
-			<li class="features-list-item">Scroll/Resize handlers are debounced, so your cpu lives to see tomorrow</li>
-			<li class="features-list-item">No dependencies</li>
-			<li class="features-list-item">Modern browser support and IE10+ (IE9+ with classList.js polyfill)</li>
-			<li class="features-list-item">insert size</li>
+			<li class="features-list-item animated hidden">Watch any scrolling element, not just the window</li>
+			<li class="features-list-item animated hidden">Supports multiple instances on the same page, even nested instances</li>
+			<li class="features-list-item animated hidden">Executes callbacks when elements enter/leave view</li>
+			<li class="features-list-item animated hidden">Tracks the first time something enters/leaves view or every time</li>
+			<li class="features-list-item animated hidden">Supports infinite scrolling out of the box</li>
+			<li class="features-list-item animated hidden">UMD wrapper for use in AMD, CommonJS or global environment</li>
+			<li class="features-list-item animated hidden">Scroll/Resize handlers are debounced, so your cpu lives to see tomorrow</li>
+			<li class="features-list-item animated hidden">No dependencies</li>
+			<li class="features-list-item animated hidden">Modern browser support and IE10+ (IE9+ with classList.js polyfill)</li>
+			<li class="features-list-item animated hidden">insert size</li>
 		</ul>
 
 	</section>
 
-	<section class="basic-usage hidden">
+	<section class="basic-usage">
 
 		<h1>Basic Usage</h1>
 
-		<pre class="language-markup line-numbers"><code>&lt;!doctype html>
-&lt;html>
-&lt;head>
-&lt;/head>
-&lt;body>
-&lt;script src="ScrollWatch.js">&lt;/script>
-&lt;/body>
-&lt;/html></code></pre>
+		<p>Include the library on your page.</p>
+
+		<pre class="language-markup line-numbers"><code>&lt;script src="ScrollWatch.js">&lt;/script></code></pre>
+
+		<p>
+			Create a new ScrollWatch instance and at least pass in some callbacks.
+			By default, ScrollWatch will fire your callbacks when any elements
+			with a <code>data-scroll-watch</code> attribute come into view. Check
+			out the API section below for all options.
+		</p>
+
+		<pre class="language-javascript line-numbers"><code>var sw = new ScrollWatch({
+	onElementInView: function(data) {
+		console.log(data.el, '...is now viewable');
+	},
+	onElementOutOfView: function(data) {
+		console.log(data.el, '...is no longer viewable');
+	}
+});</code></pre>
 
 	</section>
 
-	<section class="hidden">
+	<section class="">
 
 		<h1>API</h1>
 
 	</section>
 
-	<footer>the footer: follow me, fork</footer>
+	<footer class="site-footer">the footer: follow me, fork</footer>
 
 			<!-- <div class="content">
 
