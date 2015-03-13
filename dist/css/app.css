@@ -22,6 +22,8 @@ body {
 
 a {
 	text-decoration: none;
+	color: #fff;
+	border-bottom: 1px dotted #fff;
 }
 
 /* Default header styles */
@@ -35,14 +37,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section {
-	padding: 2.5rem 1.5625rem 0 1.5625rem;
+	padding: 2.5rem 3.125rem 0 3.125rem;
 }
 
 .site-header,
 .site-footer {
 	background-color: #0681CD;
 	color: #fff;
-	padding: 3.125rem 1.5625rem;
+	padding: 3.125rem;
 	text-align: center;
 }
 
@@ -50,8 +52,8 @@ section {
 .magnifier {
 	position: relative;
 	display: inline-block;
-	width: 240px;
-	height: 240px;
+	width: 15rem;
+	height: 15rem;
 	background-color: #fff;
 	border-radius: 50%;
 }
@@ -65,8 +67,8 @@ section {
 	position: absolute;
 	left: -20%;
 	bottom: -15%;
-	border-top-left-radius: 16px;
-	border-bottom-left-radius: 16px;
+	border-top-left-radius: 1rem;
+	border-bottom-left-radius: 1rem;
 	-webkit-transform: rotate(-50deg);
 	    -ms-transform: rotate(-50deg);
 	        transform: rotate(-50deg);
@@ -100,7 +102,6 @@ section {
 }
 
 .site-header-btn {
-	color: #fff;
 	border: 1px solid #fff;
 	padding: .9375rem 1.875rem;
 	width: 100%;
@@ -151,6 +152,7 @@ section {
 	padding: 2rem;
 	margin: .625rem;
 	border-radius: .3125rem;
+	max-width: 100%;
 	height: 9.375rem;
 	text-align: center;
 	display: -webkit-box;
@@ -181,12 +183,12 @@ section {
 @media only screen and (min-width: 40.063em) {
 
 	.magnifier {
-		width: 272px;
-		height: 272px;
+		width: 17rem;
+		height: 17rem;
 	}
 
 	.site-header-title {
-		margin-left: 2.5em;
+		margin-left: 2.5rem;
 	}
 
 	.site-header-btn {
@@ -201,6 +203,9 @@ section {
 
 .sw-fadeInUp {
 	visibility: hidden;
+}
+
+.fadeInUp {
 	-webkit-animation-duration: .5s;
 	        animation-duration: .5s;
 }

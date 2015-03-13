@@ -36,20 +36,21 @@
 
 		<ul class="features-list">
 			<li class="features-list-item animated hidden">Watch any scrolling element, not just the window</li>
-			<li class="features-list-item animated hidden">Supports multiple instances on the same page, even nested instances</li>
+			<li class="features-list-item animated hidden">Supports multiple instances and nested containers</li>
 			<li class="features-list-item animated hidden">Executes callbacks when elements enter/leave view</li>
 			<li class="features-list-item animated hidden">Tracks the first time something enters/leaves view or every time</li>
+			<li class="features-list-item animated hidden">Watches vertical and horizontal scrolling</li>
 			<li class="features-list-item animated hidden">Supports infinite scrolling out of the box</li>
 			<li class="features-list-item animated hidden">UMD wrapper for use in AMD, CommonJS or global environment</li>
-			<li class="features-list-item animated hidden">Scroll/Resize handlers are debounced, so your cpu lives to see tomorrow</li>
+			<li class="features-list-item animated hidden">Scroll/Resize handlers are throttled, so your cpu lives to see tomorrow</li>
 			<li class="features-list-item animated hidden">No dependencies</li>
-			<li class="features-list-item animated hidden">Modern browser support and IE10+ (IE9+ with classList.js polyfill)</li>
+			<li class="features-list-item animated hidden"><span>Modern browser support and IE10+ (IE9+ with <a href="//github.com/eligrey/classList.js/">classList.js</a> polyfill)</span></li>
 			<li class="features-list-item animated hidden">insert size</li>
 		</ul>
 
 	</section>
 
-	<section class="basic-usage">
+	<section class="basic-usage animated sw-fadeInUp">
 
 		<h1>Basic Usage</h1>
 
@@ -58,89 +59,122 @@
 		<pre class="language-markup line-numbers"><code>&lt;script src="ScrollWatch.js">&lt;/script></code></pre>
 
 		<p>
-			Create a new ScrollWatch instance and at least pass in some callbacks.
-			By default, ScrollWatch will fire your callbacks when any elements
-			with a <code>data-scroll-watch</code> attribute come into view. Check
-			out the API section below for all options.
+			Create a new ScrollWatch instance and pass in an options object with an
+			<code>onElementInView</code> callback. By default, ScrollWatch will fire
+			your callback when any elements	with a <code>data-scroll-watch</code>
+			attribute come into view. Check	out the API section below for all options.
 		</p>
 
 		<pre class="language-javascript line-numbers"><code>var sw = new ScrollWatch({
 	onElementInView: function(data) {
-		console.log(data.el, '...is now viewable');
-	},
-	onElementOutOfView: function(data) {
-		console.log(data.el, '...is no longer viewable');
+		console.log(data.el, '...is now in view');
 	}
 });</code></pre>
 
 	</section>
 
-	<section class="">
+	<section class="animated sw-fadeInUp">
 
 		<h1>API</h1>
+
+		<h2>Options</h2>
+
+		<p>Below are all of the options you can pass to ScrollWatch and their default values:</p>
+
+		<pre class="language-javascript line-numbers"><code>{
+	// The element that contains the elements you want to watch.
+	// Remember, you can have multiple instances and watch nested containers.
+	container: window.document.documentElement,
+
+	// A selector for the element(s) you want to watch.
+	watch: '[data-scroll-watch]',
+
+	// True to stop watching the element after it comes into view the first time.
+	// False to watch the element forever.
+	watchOnce: true,
+
+	// Class applied to elements that are in view.
+	inViewClass: 'scroll-watch-in-view',
+
+	// Number of milliseconds to wait between processing scroll events.
+	scrollThrottle: 250,
+
+	// Number of milliseconds to wait between processing resize events.
+	resizeThrottle: 250,
+
+	// Number of pixels to offset the viewable area when processing elements.
+	// For example, if a watched element is 5 pixels below the fold, it will
+	// be considered in view if watchOffset is > 5 pixels.
+	watchOffset: 0,
+
+	// Callback for when an element comes into view. A data object will be
+	// passed into the callback, consisting of the following:
+		// eventType: scroll, resize, refresh or scrollwatchinit if the element
+		// is in view on initial load of the page
+		// el: the element being watched
+		// direction: up, down, right, left for scroll eventType, otherwise undefined
+	onElementInView: function(){},
+
+	// Callback for when an element goes out of view. The same data object will
+	// be passed in as described in onElementInView.
+	onElementOutOfView: function(){},
+
+	// Whether or not to turn on infinite scroll watching. If true, callbacks
+	// will be fired when the container reaches the end.
+	infiniteScroll: false,
+
+	// Similar to watchOffset, number of pixels to offset what is considered the
+	// end of the container.
+	infiniteOffset: 0,
+
+	// Callback for when container has reached its vertical end. A data object
+	// will be passed into the callback, consisting of the following:
+		// eventType: scroll, resize, refresh or scrollwatchinit if the container
+		// is at its end on initial load of the page
+		// direction: up, down, right, left for scroll eventType, otherwise undefined
+	onInfiniteYInView: function(){},
+
+	// Callback for when container has reached its horizontal end. The same data
+	// object will be passed in as described in onInfiniteYInView.
+	onInfiniteXInView: function(){}
+}</code></pre>
+
+	<h2>Methods</h2>
+
+	<p>Below are the public methods available on each ScrollWatch instance:</p>
+
+	<h3><code>refresh()</code></h3>
+
+	<p>
+		Rechecks the dom for new elements to watch. Call this after injecting
+		new content into the DOM that matches an existing watch you have setup.
+	</p>
+
+	<h3><code>destroy()</code></h3>
+
+	<p>
+		Destroy the instance of ScrollWatch
+	</p>
+
+	<h3><code>pauseInfinitScroll()</code></h3>
+
+	<p>
+		Pause infinite scroll watching.
+	</p>
+
+	<h3><code>resumeInfinitScroll()</code></h3>
+
+	<p>
+		Resume infinit scroll watching.
+	</p>
 
 	</section>
 
 	<footer class="site-footer">the footer: follow me, fork</footer>
 
-			<!-- <div class="content">
-
-				<div class="magnifier"></div>
-
-				<div class="text-content">
-
-					<h1 class="magnifier-caption">ScrollWatch</h1>
-
-					<h2 class="tag-line">
-						Easily add lazy loading, infinite scrolling, or any other
-						dynamic interaction based on scroll position.
-					</h2>
-
-					<a href="#" class="download-btn">Download</a>
-
-					<h3>Basic Usage</h3>
-
-					<pre class="line-numbers"><code class="language-javascript">var sw = new ScrollWatch();</code></pre>
-
-				</div>
-
-			</div> -->
-
-			<!--<section data-scroll-watch>-->
-
-			<!--	<dl>-->
-			<!--		<dt>container</dt>-->
-			<!--		<dd>the element that contains the elements you want to watch-->
-			<!--		(default is window)</dd>-->
-			<!--		<dt>watch</dt>-->
-					<!--<dd>a selector for the element(s) you want to watch (default [data-scroll-watch]</dd>-->
-					<!--<dt>watchOnce</dt>-->
-					<!--<dd>-->
-					<!--	true to stop watching the element after it is processed the first time.-->
-			<!--			false to always watch the element and process it every time it comes into view-->
-			<!--			(default true)-->
-			<!--		</dd>-->
-			<!--		<dt>inViewClass</dt>-->
-			<!--		<dd>class applied to elements that are in view (default scroll-watch-in-view)</dd>-->
-			<!--		<dt>scrollDebounce</dt>-->
-			<!--		<dd>-->
-			<!--			number of milliseconds to wait after a scroll event fires before-->
-			<!--			processing which elements are in view (default 200). useful to save your cpu from-->
-			<!--			getting pounded by scroll events and to avoid processing elements that the user-->
-			<!--			is going to scroll past.-->
-			<!--		</dd>-->
-			<!--		<dt>resizeDebounce</dt>-->
-			<!--		<dd>same as scrollDebounce, but for resize event (default 500)</dd>-->
-			<!--		<dt>watchOffset</dt>-->
-			<!--		<dd>number of pixels to offset the viewable area when processing elements-->
-			<!--			(default 0). for example, if a watched element is 5 pixels below the bottom of the-->
-			<!--			screen it will be considered in view if watchOffset is > 5px-->
-			<!--		</dd>-->
-			<!--	</dl>-->
-			<!--</section>-->
-
-	<script src="src/js/vendor/ScrollWatch.js"></script>
+	<script src="src/js/vendor/classList.js"></script>
 	<script src="src/js/vendor/prism.js"></script>
+	<script src="src/js/vendor/ScrollWatch.js"></script>
 	<script src="src/js/app.js"></script>
   </body>
 </html>
