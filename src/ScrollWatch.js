@@ -15,8 +15,8 @@ var config = {
 	watch: '[data-scroll-watch]',
 	watchOnce: true,
 	inViewClass: 'scroll-watch-in-view',
-	scrollDebounce: 200,
-	resizeDebounce: 500,
+	scrollThrottle: 250,
+	resizeThrottle: 250,
 	watchOffset: 0,
 	infiniteScroll: false,
 	infiniteOffset: 0,
@@ -59,6 +59,43 @@ var extend = function(retObj) {
 	}
 
 	return retObj;
+
+};
+
+var throttle = function (fn, threshhold, scope) {
+
+	threshhold = threshhold || 250;
+
+	var last;
+	var deferTimer;
+
+	return function () {
+
+		var context = scope || this;
+		var now = +new Date();
+		var args = arguments;
+
+		if (last && now < last + threshhold) {
+
+			window.clearTimeout(deferTimer);
+
+			deferTimer = setTimeout(function () {
+
+				last = now;
+
+				fn.apply(context, args);
+
+			}, threshhold);
+
+		} else {
+
+			last = now;
+
+			fn.apply(context, args);
+
+		}
+
+	};
 
 };
 
@@ -233,28 +270,24 @@ var checkInfinite = function(eventType) {
 
 };
 
-var clearDebounceTimer = function() {
-
-	clearTimeout(instanceData[this._id].debounceTimer);
-
-};
-
 // Add listeners to the scrolling container for each instance.
 var addListeners = function() {
 
+	var data = instanceData[this._id];
 	var scrollingElement = getScrollingElement.call(this);
 
-	scrollingElement.addEventListener('scroll', instanceData[this._id].handler, false);
-	scrollingElement.addEventListener('resize', instanceData[this._id].handler, false);
+	scrollingElement.addEventListener('scroll', data.scrollHandler, false);
+	scrollingElement.addEventListener('resize', data.resizeHandler, false);
 
 };
 
 var removeListeners = function() {
 
+	var data = instanceData[this._id];
 	var scrollingElement = getScrollingElement.call(this);
 
-	scrollingElement.removeEventListener('scroll', instanceData[this._id].handler);
-	scrollingElement.removeEventListener('resize', instanceData[this._id].handler);
+	scrollingElement.removeEventListener('scroll', data.scrollHandler);
+	scrollingElement.removeEventListener('resize', data.resizeHandler);
 
 };
 
@@ -436,65 +469,56 @@ var mergeOptions = function(opts) {
 
 };
 
+var handler = function(e) {
+
+	var eventType = e.type;
+
+	// For scroll events, only check the viewport if something
+	// has changed. Fixes issues when using gestures on a page
+	// that doesn't need to scroll. An event would still fire,
+	// but the position didn't change  because the
+	// window/container "bounced" back into place.
+	if (eventType === 'resize' || hasScrollPositionChanged.call(this, 'x') || hasScrollPositionChanged.call(this, 'y')) {
+
+		checkViewport.call(this, eventType);
+
+	}
+
+};
+
 var ScrollWatch = function(opts) {
 
 	// Protect against missing new keyword.
 	if (this instanceof ScrollWatch) {
+
+		var data;
 
 		Object.defineProperty(this, '_id', {value: instanceId++});
 
 		// Keep all instance data private, except for the '_id', which will
 		// be the key to get the private data for a specific instance.
 
-		instanceData[this._id] = {
+		data = instanceData[this._id] = {
 
 			config: {},
 			// The elements to watch for this instance.
 			elements: [],
 			lastScrollPosition: {top: 0, left: 0},
-			debounceTimer: null,
-			isInfiniteScrollPaused: false,
-
-			// In order to remove listeners later and keep a correct reference
-			// to 'this', give each instance it's own event handler.
-			handler: function(e) {
-
-				var data = instanceData[this._id];
-				var config = data.config;
-				var eventType = e.type;
-				var debounce = eventType === 'scroll' ? config.scrollDebounce : config.resizeDebounce;
-
-				clearDebounceTimer.call(this);
-
-				data.debounceTimer = setTimeout(function() {
-
-					// For scroll events, only check the viewport if something
-					// has changed. Fixes issues when using gestures on a page
-					// that doesn't need to scroll. An event would still fire,
-					// but the position didn't change  because the
-					// window/container "bounced" back into place.
-					if (eventType === 'resize' || hasScrollPositionChanged.call(this, 'x') || hasScrollPositionChanged.call(this, 'y')) {
-
-						checkViewport.call(this, eventType);
-
-					}
-
-				// Bind the instance to the function.
-				}.bind(this), debounce);
-
-			// Bind the instance to the method.
-			}.bind(this)
+			isInfiniteScrollPaused: false
 
 		};
 
 		mergeOptions.call(this, opts);
+
+		// In order to remove listeners later and keep a correct reference
+		// to 'this', give each instance it's own event handler.
+		data.scrollHandler = throttle(handler.bind(this), data.config.scrollThrottle, this);
+		data.resizeHandler = throttle(handler.bind(this), data.config.resizeThrottle, this);
+
 		saveContainerElement.call(this);
 		addListeners.call(this);
 		saveElements.call(this);
 		checkViewport.call(this, initEvent);
-		// saveScrollPosition.call(this, true);
-		// checkElements.call(this, initEvent);
-		// checkInfinite.call(this, initEvent);
 
 	} else {
 
@@ -517,7 +541,6 @@ ScrollWatch.prototype = {
 	destroy: function() {
 
 		removeListeners.call(this);
-		clearDebounceTimer.call(this);
 		delete instanceData[this._id];
 
 	},
