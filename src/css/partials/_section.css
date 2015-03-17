@@ -1,0 +1,29 @@
+.section {
+	font-size: 1.8rem;
+	margin: 0 2em 2em 2em;
+	color: #333;
+}
+
+.section__header {
+	font-size: 2em;
+	margin-bottom: .5em;
+	font-weight: 200;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+}
+
+.section__header--sub {
+	font-size: 1.5em;
+	margin-bottom: .6666666666666666em;
+	font-weight: 200;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+}
+
+.section__text {
+	margin-bottom: 1em;
+}
+
+.section__inline-code[class*="language-"] {
+	padding: 0 .4em;
+}

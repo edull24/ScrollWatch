@@ -1,0 +1,33 @@
+.code-list {
+	font-size: 1.8rem;
+	margin-bottom: 1em;
+}
+
+.code-list__term {
+	margin-bottom: .5em;
+}
+
+.code-list__description {
+	margin-bottom: 1.5em;
+	margin-left: 1em;
+}
+
+/* Prism override. */
+.code-list__term code[class*="language-"] {
+	display: inline-block;
+	padding: .25em .5em;
+	overflow: auto;
+	max-width: 100%;
+}
+
+.code-list__term--nested {
+	margin-left: 2em;
+}
+
+.code-list__description--nested {
+	margin-left: 3em;
+}
+
+.code-list__term--nested code[class*="language-"] {
+	padding: .1em .4em;
+}

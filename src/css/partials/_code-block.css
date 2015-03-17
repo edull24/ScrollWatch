@@ -1,0 +1,6 @@
+/* Override reset value so code blocks scroll. */
+.code-block[class*="language-"] {
+	font-size: 1.8rem;
+	word-wrap: normal;
+	margin-bottom: 1.5em;
+}

@@ -1,0 +1,47 @@
+.logo {
+	font-size: 1.8rem;
+	position: relative;
+	background-color: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	width: 15em;
+	height: 15em;
+	margin-bottom: .3em;
+}
+
+/* Handle */
+.logo::before {
+	content: '';
+	background-color: #fff;
+	width: 55%;
+	height: 20%;
+	position: absolute;
+	left: -20%;
+	bottom: -15%;
+	border-top-left-radius: 1em;
+	border-bottom-left-radius: 1em;
+	transform: rotate(-50deg);
+}
+
+/* Inner circle.*/
+.logo::after {
+	content: '';
+	position: absolute;
+	width: 65%;
+	height: 65%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #0681CD;
+	border-radius: 50%;
+}
+
+/* Medium min-width 641px */
+@media only screen and (min-width: 40.063em) {
+
+	.logo {
+		width: 17em;
+		height: 17em;
+	}
+
+}

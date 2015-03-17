@@ -10,7 +10,7 @@
 	});
 
 	var swDefault = new window.ScrollWatch({
-		watch: '.features-list-item',
+		watch: '.feature-list__item',
 		onElementInView: function(data) {
 			console.log(data);
 			data.el.classList.remove('hidden');
