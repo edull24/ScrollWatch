@@ -1,21 +1,45 @@
-// (function() {
+(function() {
 
-	var swDefault = new window.ScrollWatch({
+	var unHide = function(el) {
+
+		el.classList.remove('hidden');
+
+	};
+
+	// Elements to fadeInUP.
+	new window.ScrollWatch({
 		watch: '.sw-fadeInUp',
 		onElementInView: function(data) {
-			// console.log(data);
 			data.el.classList.remove('sw-fadeInUp');
 			data.el.classList.add('fadeInUp');
 		}
 	});
 
-	var swDefault = new window.ScrollWatch({
+	// Elements to fadeIn.
+	new window.ScrollWatch({
+		watch: '.sw-fadeIn',
+		onElementInView: function(data) {
+			data.el.classList.remove('sw-fadeIn');
+			data.el.classList.add('fadeIn');
+		}
+	});
+
+	// Flip feature cards.
+	new window.ScrollWatch({
 		watch: '.feature-list__item',
 		onElementInView: function(data) {
-			console.log(data);
-			data.el.classList.remove('hidden');
+			unHide(data.el);
 			data.el.classList.add('flipInX');
 		}
 	});
 
-// })();
+	// Header tagline.
+	new window.ScrollWatch({
+		watch: '.site-header__tagline',
+		onElementInView: function(data) {
+			unHide(data.el);
+			data.el.classList.add('rubberBand');
+		}
+	});
+
+})();
