@@ -4,7 +4,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ScrollWatch Demo</title>
+
+	<!-- Facebook open graph tags. -->
+	<!-- https://developers.facebook.com/docs/plugins/checklist/ -->
+	<meta property="fb:title" content="ScrollWatch">
+	<meta property="fb:site_name" content="ScrollWatch">
+	<meta property="fb:url" content="https://edull24.github.io/ScrollWatch/">
+	<meta property="fb:description" content="Easily add lazy loading, infinite scrolling, or any other dynamic interaction based on scroll position.">
+
+	<title>ScrollWatch</title>
+
+	<!-- Favicon Start -->
 	<!-- http://www.freefavicon.com/freefavicons/software/iconinfo/search-ideogram-152-188650.html -->
 	<link rel="icon" type="image/x-icon" href="src/img/favicons/favicon.ico">
 	<!-- Apple iOS devices and Google Android Devices -->
@@ -20,7 +30,13 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="src/img/favicons/search-ideogram-72-188650.png">
 	<link rel="apple-touch-icon-precomposed" href="src/img/favicons/search-ideogram-57-188650.png">
 	<link rel="icon" href="src/img/favicons/search-ideogram-32-188650.png" sizes="32x32">
+	<!-- Favicon End -->
+
+	<!-- Tell search engines to use HTTPS. -->
+	<!-- https://konklone.com/post/github-pages-now-sorta-supports-https-so-use-it -->
 	<link rel="canonical" href="https://edull24.github.io/ScrollWatch/">
+
+	<!-- CSS -->
 	<link rel="stylesheet" href="src/css/vendor/reset.css">
 	<link rel="stylesheet" href="src/css/vendor/prism.css">
 	<link rel="stylesheet" href="src/css/vendor/animate.css">
@@ -37,6 +53,8 @@
   </head>
   <body>
 
+  	<div id="fb-root"></div>
+
 	<header class="site-header">
 
 		<div class="logo animated tada"></div>
@@ -48,13 +66,36 @@
 			dynamic interaction based on scroll position.
 		</h2>
 
-		<a href="#" class="site-header__btn animated sw-fadeIn">Download</a>
+		<div class="animated sw-fadeIn">
 
-		<div class="github-btns animated sw-fadeIn">
+		<a href="#" class="site-header__btn">Download</a>
 
-			<iframe class="github-btns__btn" src="//ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-			<iframe class="github-btns__btn" src="//ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-			<iframe class="github-btns__btn" src="//ghbtns.com/github-btn.html?user=edull24&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+		<button class="site-header__connect-share-btn">connect and share</button>
+
+		</div>
+
+		<div id="socialHeader" class="social social--header">
+
+			<div class="social__btns">
+
+				<iframe src="//ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=star&count=false&size=large" frameborder="0" scrolling="0" width="75px" height="30px"></iframe>
+				<iframe src="//ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=fork&count=false&size=large" frameborder="0" scrolling="0" width="79px" height="30px"></iframe>
+				<iframe src="//ghbtns.com/github-btn.html?user=edull24&type=follow&count=false&size=large" frameborder="0" scrolling="0" width="166px" height="30px"></iframe>
+
+			</div>
+
+			<div class="social__btns">
+
+				<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-via="edull24" data-size="large" data-related="edull24" data-hashtags="scrollwatch">Tweet</a>
+				<a href="https://twitter.com/edull24" class="twitter-follow-button" data-show-count="false" data-width="79" data-size="large">Follow @edull24</a>
+
+			</div>
+
+			<div class="social__btns">
+
+				<div class="fb-like" data-href="https://edull24.github.io/ScrollWatch/" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
+
+			</div>
 
 		</div>
 
@@ -307,13 +348,32 @@
 
 	<footer class="site-footer">
 
-		<div class="github-btns">
+		<div class="social">
 
-			<iframe class="github-btns__btn" src="//ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-			<iframe class="github-btns__btn" src="//ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-			<iframe class="github-btns__btn" src="//ghbtns.com/github-btn.html?user=edull24&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+			<div class="social__btns">
+
+				<iframe src="//ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=star&count=false&size=large" frameborder="0" scrolling="0" width="75px" height="30px"></iframe>
+				<iframe src="//ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=fork&count=false&size=large" frameborder="0" scrolling="0" width="79px" height="30px"></iframe>
+				<iframe src="//ghbtns.com/github-btn.html?user=edull24&type=follow&count=false&size=large" frameborder="0" scrolling="0" width="166px" height="30px"></iframe>
+
+			</div>
+
+			<div class="social__btns">
+
+				<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-via="edull24" data-size="large" data-related="edull24" data-hashtags="scrollwatch">Tweet</a>
+				<a href="https://twitter.com/edull24" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @edull24</a>
+
+			</div>
+
+			<div class="social__btns">
+
+				<div class="fb-like" data-href="https://edull24.github.io/ScrollWatch/" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
+
+			</div>
 
 		</div>
+
+		<p>Copyright &copy; 2015 MIT License</p>
 
 	</footer>
 
@@ -321,5 +381,13 @@
 	<script src="src/js/vendor/prism.js"></script>
 	<script src="src/js/vendor/ScrollWatch.js"></script>
 	<script src="src/js/app.js"></script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
   </body>
 </html>

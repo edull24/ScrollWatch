@@ -1,0 +1,14 @@
+.social--header {
+	display: none;
+}
+
+.social--header.is-expanded {
+	display: block
+}
+
+.social__btns {
+	font-size: 1rem;
+	text-align: center;
+	line-height: 2.5;
+	margin-bottom: 1em;
+}

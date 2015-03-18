@@ -43,6 +43,19 @@
 	color: #0681CD;
 }
 
+.site-header__connect-share-btn {
+	font-size: .5em;
+	color: inherit;
+	border: none;
+	border-bottom: 1px dotted #fff;
+	background: transparent;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	padding: 0;
+
+}
+
 @media only screen and (min-width: 40.063em) {
 
 	.site-header__title {
