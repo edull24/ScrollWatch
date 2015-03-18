@@ -1,0 +1,31 @@
+html,
+body {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	color: #fff;
+}
+
+.site-footer {
+	background-color: #0681CD;
+	color: #fff;
+	padding: 3.125rem;
+	text-align: center;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.sw-fadeInUp,
+.sw-fadeIn {
+	visibility: hidden;
+}
+
+.fadeInUp {
+	animation-duration: .5s;
+}
