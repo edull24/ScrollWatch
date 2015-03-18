@@ -3,7 +3,23 @@
   <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>ScrollWatch Demo</title>
+	<!-- http://www.freefavicon.com/freefavicons/software/iconinfo/search-ideogram-152-188650.html -->
+	<link rel="icon" type="image/x-icon" href="src/img/favicons/favicon.ico">
+	<!-- Apple iOS devices and Google Android Devices -->
+	<link rel="apple-touch-icon-precomposed" href="src/img/favicons/search-ideogram-152-188650.png">
+	<!-- IE 10 Metro Tile Icon -->
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="src/img/favicons/search-ideogram-144-188650.png">
+	<!-- Everything Else -->
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="src/img/favicons/search-ideogram-152-188650.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="src/img/favicons/search-ideogram-144-188650.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="src/img/favicons/search-ideogram-120-188650.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="src/img/favicons/search-ideogram-114-188650.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="src/img/favicons/search-ideogram-72-188650.png">
+	<link rel="apple-touch-icon-precomposed" href="src/img/favicons/search-ideogram-57-188650.png">
+	<link rel="icon" href="src/img/favicons/search-ideogram-32-188650.png" sizes="32x32">
 	<link rel="canonical" href="https://edull24.github.io/ScrollWatch/">
 	<link rel="stylesheet" href="src/css/vendor/reset.css">
 	<link rel="stylesheet" href="src/css/vendor/prism.css">
@@ -11,7 +27,7 @@
 	<link rel="stylesheet" href="dist/css/app.css">
 	<script>
 
-		if ((host === 'edull24.github.io') && (window.location.protocol !== "https:")) {
+		if (window.location.host === 'edull24.github.io' && window.location.protocol !== "https:") {
 
 		    window.location.protocol = "https:";
 
