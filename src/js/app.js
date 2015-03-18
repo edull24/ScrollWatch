@@ -84,7 +84,7 @@
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
 
-		}, 1000);
+		}, 1500);
 
 	};
 
