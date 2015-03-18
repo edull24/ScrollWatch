@@ -4,10 +4,22 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ScrollWatch Demo</title>
+	<link rel="canonical" href="https://edull24.github.io/ScrollWatch/">
 	<link rel="stylesheet" href="src/css/vendor/reset.css">
 	<link rel="stylesheet" href="src/css/vendor/prism.css">
 	<link rel="stylesheet" href="src/css/vendor/animate.css">
 	<link rel="stylesheet" href="dist/css/app.css">
+	<script>
+
+		var host = "edull24.github.io/ScrollWatch/";
+
+		if ((host === window.location.host) && (window.location.protocol !== "https:")) {
+
+		    window.location.protocol = "https";
+
+		}
+
+	</script>
   </head>
   <body>
 
@@ -22,7 +34,15 @@
 			dynamic interaction based on scroll position.
 		</h2>
 
-		<a href="#" class="site-header__btn">Download</a>
+		<a href="#" class="site-header__btn animated sw-fadeIn">Download</a>
+
+		<div class="github-btns animated sw-fadeIn">
+
+			<iframe class="github-btns__btn" src="https://ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+			<iframe class="github-btns__btn" src="https://ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+			<iframe class="github-btns__btn" src="https://ghbtns.com/github-btn.html?user=edull24&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+
+		</div>
 
 	</header>
 
@@ -271,7 +291,17 @@
 
 	</section>
 
-	<footer class="site-footer">the footer: follow me, fork</footer>
+	<footer class="site-footer">
+
+		<div class="github-btns">
+
+			<iframe class="github-btns__btn" src="https://ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+			<iframe class="github-btns__btn" src="https://ghbtns.com/github-btn.html?user=edull24&repo=ScrollWatch&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+			<iframe class="github-btns__btn" src="https://ghbtns.com/github-btn.html?user=edull24&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+
+		</div>
+
+	</footer>
 
 	<script src="src/js/vendor/classList.js"></script>
 	<script src="src/js/vendor/prism.js"></script>
