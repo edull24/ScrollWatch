@@ -7,7 +7,7 @@
 
 	<meta name="description" content="An open source JavaScript library to easily add lazy loading, infinite scrolling, or any other dynamic interaction based on scroll position.">
 	<meta name="keywords" content="ScrollWatch, lazy load, infinite scroll, JavaScript, library">
-	<meat name="author" content="@edull24">
+	<meta name="author" content="@edull24">
 
 	<!-- Facebook/Twitter open graph tags. -->
 	<!-- https://developers.facebook.com/docs/plugins/checklist/ -->
@@ -81,7 +81,7 @@
 
 			<a href="#" class="site-header__btn">Download</a>
 
-			<button class="site-header__connect-share-btn">connect and share</button>
+			<button id="socialToggle" class="site-header__social-toggle">connect and share</button>
 
 		</div>
 
@@ -158,202 +158,214 @@
 
 	<section class="section">
 
-		<h1 class="section__header section__header--main animated sw-fadeInUp">API</h1>
+		<h1 class="section__header animated sw-fadeInUp">API</h1>
 
-		<h2 class="section__header section__header--sub animated sw-fadeIn">Instantiation</h2>
+		<div class="section__group">
 
-		<p class="section__text animated sw-fadeIn">
-			You can create as many instances of ScrollWatch as you need.
-			The constructor accepts an options object, allowing you to
-			customize your instance. Save a reference to the new instance
-			if you want to call any of the public methods at a later time.
-		</p>
+			<h2 class="section__header section__header--group animated sw-fadeIn">Instantiation</h2>
 
-		<pre class="code-block language-javascript line-numbers animated sw-fadeIn"><code>var sw = new ScrollWatch({
+			<p class="section__text animated sw-fadeIn">
+				You can create as many instances of ScrollWatch as you need.
+				The constructor accepts an options object, allowing you to
+				customize your instance. Save a reference to the new instance
+				if you want to call any of the public methods at a later time.
+			</p>
+
+			<pre class="code-block language-javascript line-numbers animated sw-fadeIn"><code>var sw = new ScrollWatch({
 	/* options */
 })</code></pre>
 
-		<h2 class="section__header section__header--sub animated sw-fadeIn">Options</h2>
+		</div>
 
-		<p class="section__text animated sw-fadeIn">Below are all of the options you can pass to ScrollWatch and their default values:</p>
+		<div class="section__group">
 
-		<dl class="code-list">
+			<h2 class="section__header section__header--group animated sw-fadeIn">Options</h2>
 
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">container: window.document.documentElement</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				The element that contains the elements you want to watch.
-				Remember, you can have multiple instances and watch nested containers.
-			</dd>
+			<p class="section__text animated sw-fadeIn">Below are all of the options you can pass to ScrollWatch and their default values:</p>
 
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">watch: '[data-scroll-watch]'</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				A selector for the element(s) you want to watch.
-			</dd>
+			<dl class="code-list">
 
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">watchOnce: true</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				True to stop watching the element after it comes into view the first time.
-				False to watch the element forever.
-			</dd>
-
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">inViewClass: 'scroll-watch-in-view'</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				Class applied to elements that are in view.
-			</dd>
-
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">scrollThrottle: 250</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				Number of milliseconds to wait between processing scroll events.
-			</dd>
-
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">resizeThrottle: 250</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				Number of milliseconds to wait between processing resize events.
-			</dd>
-
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">watchOffset: 0</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				Number of pixels to offset the viewable area when processing elements.
-				For example, if a watched element is 5 pixels below the fold, it will
-				be considered in view if watchOffset is > 5 pixels.
-			</dd>
-
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">onElementInView: function(obj){}</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				Callback for when an element comes into view. A data object will be
-				passed into the callback with the following properties:
-			</dd>
-
-				<dt class="code-list__term code-list__term--nested animated sw-fadeIn">
-					<code class="language-javascript">eventType</code>
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">container: window.document.documentElement</code>
 				</dt>
-				<dd class="code-list__description code-list__description--nested animated sw-fadeIn">
-					Value of 'scroll', 'resize', 'refresh' or 'scrollwatchinit' if the element
-					is in view on instantiation.
-				</dd>
-				<dt class="code-list__term code-list__term--nested animated sw-fadeIn">
-					<code class="language-javascript">el</code>
-				</dt>
-				<dd class="code-list__description code-list__description--nested animated sw-fadeIn">
-					The element being watched.
-				</dd>
-				<dt class="code-list__term code-list__term--nested animated sw-fadeIn">
-					<code class="language-javascript">direction</code>
-				</dt>
-				<dd class="code-list__description code-list__description--nested animated sw-fadeIn">
-					Value of 'up', 'down', 'right' or 'left' for an eventType of 'scroll',
-					otherwise undefined.
+				<dd class="code-list__description animated sw-fadeIn">
+					The element that contains the elements you want to watch.
+					Remember, you can have multiple instances and watch nested containers.
 				</dd>
 
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">onElementOutOfView: function(obj){}</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				Callback for when an element goes out of view. The same data object will
-				be passed in as described in onElementInView.
-			</dd>
-
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">infiniteScroll: false</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				Whether or not to turn on infinite scroll watching. If true, callbacks
-				will be fired when the container reaches the end.
-			</dd>
-
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">infiniteOffset: 0</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				Similar to watchOffset, number of pixels to offset what is considered the
-				end of the container.
-			</dd>
-
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">onInfiniteYInView: function(obj){}</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				Callback for when container has reached its vertical end. A data object
-				will be passed into the callback with the following properties:
-			</dd>
-
-				<dt class="code-list__term code-list__term--nested animated sw-fadeIn">
-					<code class="language-javascript">eventType</code>
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">watch: '[data-scroll-watch]'</code>
 				</dt>
-				<dd class="code-list__description code-list__description--nested animated sw-fadeIn">
-					Value of 'scroll', 'resize', 'refresh' or 'scrollwatchinit' if the container
-					is at its end on instantiation.
-				</dd>
-				<dt class="code-list__term code-list__term--nested animated sw-fadeIn">
-					<code class="language-javascript">direction</code>
-				</dt>
-				<dd class="code-list__description code-list__description--nested animated sw-fadeIn">
-					Value of 'up', 'down', 'right' or 'left' for an eventType of 'scroll',
-					otherwise undefined.
+				<dd class="code-list__description animated sw-fadeIn">
+					A selector for the element(s) you want to watch.
 				</dd>
 
-			<dt class="code-list__term animated sw-fadeIn">
-				<code class="language-javascript">onInfiniteXInView: function(obj){}</code>
-			</dt>
-			<dd class="code-list__description animated sw-fadeIn">
-				Callback for when container has reached its horizontal end. The same data
-				object will be passed in as described in onInfiniteYInView.
-			</dd>
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">watchOnce: true</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					True to stop watching the element after it comes into view the first time.
+					False to watch the element forever.
+				</dd>
 
-		</dl>
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">inViewClass: 'scroll-watch-in-view'</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Class applied to elements that are in view.
+				</dd>
 
-	<h2 class="section__header section__header--sub animated sw-fadeInUp">Methods</h2>
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">scrollThrottle: 250</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Number of milliseconds to wait between processing scroll events.
+				</dd>
 
-	<p class="section__text animated sw-fadeIn">Below are the public methods available on each ScrollWatch instance:</p>
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">resizeThrottle: 250</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Number of milliseconds to wait between processing resize events.
+				</dd>
 
-	<dl class="code-list">
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">watchOffset: 0</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Number of pixels to offset the viewable area when processing elements.
+					For example, if a watched element is 5 pixels below the fold, it will
+					be considered in view if watchOffset is > 5 pixels.
+				</dd>
 
-		<dt class="code-list__term animated sw-fadeIn">
-			<code class="language-javascript">refresh()</code>
-		</dt>
-		<dd class="code-list__description animated sw-fadeIn">
-			Rechecks the dom for new elements to watch. Call this after injecting
-			new content into the DOM that matches an existing watch you have setup.
-		</dd>
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">onElementInView: function(obj){}</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Callback for when an element comes into view. A data object will be
+					passed into the callback with the following properties:
+				</dd>
 
-		<dt class="code-list__term animated sw-fadeIn">
-			<code class="language-javascript">destroy()</code>
-		</dt>
-		<dd class="code-list__description animated sw-fadeIn">
-			Destroy the instance of ScrollWatch.
-		</dd>
+					<dt class="code-list__term code-list__term--nested animated sw-fadeIn">
+						<code class="language-javascript">eventType</code>
+					</dt>
+					<dd class="code-list__description code-list__description--nested animated sw-fadeIn">
+						Value of 'scroll', 'resize', 'refresh' or 'scrollwatchinit' if the element
+						is in view on instantiation.
+					</dd>
+					<dt class="code-list__term code-list__term--nested animated sw-fadeIn">
+						<code class="language-javascript">el</code>
+					</dt>
+					<dd class="code-list__description code-list__description--nested animated sw-fadeIn">
+						The element being watched.
+					</dd>
+					<dt class="code-list__term code-list__term--nested animated sw-fadeIn">
+						<code class="language-javascript">direction</code>
+					</dt>
+					<dd class="code-list__description code-list__description--nested animated sw-fadeIn">
+						Value of 'up', 'down', 'right' or 'left' for an eventType of 'scroll',
+						otherwise undefined.
+					</dd>
 
-		<dt class="code-list__term animated sw-fadeIn">
-			<code class="language-javascript">pauseInfinitScroll()</code>
-		</dt>
-		<dd class="code-list__description animated sw-fadeIn">
-			Pause infinite scroll watching.
-		</dd>
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">onElementOutOfView: function(obj){}</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Callback for when an element goes out of view. The same data object will
+					be passed in as described in onElementInView.
+				</dd>
 
-		<dt class="code-list__term animated sw-fadeIn">
-			<code class="language-javascript">resumeInfinitScroll()</code>
-		</dt>
-		<dd class="code-list__description animated sw-fadeIn">
-			Resume infinit scroll watching.
-		</dd>
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">infiniteScroll: false</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Whether or not to turn on infinite scroll watching. If true, callbacks
+					will be fired when the container reaches the end.
+				</dd>
 
-	</dl>
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">infiniteOffset: 0</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Similar to watchOffset, number of pixels to offset what is considered the
+					end of the container.
+				</dd>
+
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">onInfiniteYInView: function(obj){}</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Callback for when container has reached its vertical end. A data object
+					will be passed into the callback with the following properties:
+				</dd>
+
+					<dt class="code-list__term code-list__term--nested animated sw-fadeIn">
+						<code class="language-javascript">eventType</code>
+					</dt>
+					<dd class="code-list__description code-list__description--nested animated sw-fadeIn">
+						Value of 'scroll', 'resize', 'refresh' or 'scrollwatchinit' if the container
+						is at its end on instantiation.
+					</dd>
+					<dt class="code-list__term code-list__term--nested animated sw-fadeIn">
+						<code class="language-javascript">direction</code>
+					</dt>
+					<dd class="code-list__description code-list__description--nested animated sw-fadeIn">
+						Value of 'up', 'down', 'right' or 'left' for an eventType of 'scroll',
+						otherwise undefined.
+					</dd>
+
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">onInfiniteXInView: function(obj){}</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Callback for when container has reached its horizontal end. The same data
+					object will be passed in as described in onInfiniteYInView.
+				</dd>
+
+			</dl>
+
+		</div>
+
+		<div class="section__group">
+
+			<h2 class="section__header section__header--group animated sw-fadeInUp">Methods</h2>
+
+			<p class="section__text animated sw-fadeIn">Below are the public methods available on each ScrollWatch instance:</p>
+
+			<dl class="code-list">
+
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">refresh()</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Rechecks the dom for new elements to watch. Call this after injecting
+					new content into the DOM that matches an existing watch you have setup.
+				</dd>
+
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">destroy()</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Destroy the instance of ScrollWatch.
+				</dd>
+
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">pauseInfinitScroll()</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Pause infinite scroll watching.
+				</dd>
+
+				<dt class="code-list__term animated sw-fadeIn">
+					<code class="language-javascript">resumeInfinitScroll()</code>
+				</dt>
+				<dd class="code-list__description animated sw-fadeIn">
+					Resume infinite scroll watching.
+				</dd>
+
+			</dl>
+
+		</div>
 
 	</section>
 

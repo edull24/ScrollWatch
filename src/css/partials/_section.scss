@@ -1,6 +1,6 @@
 .section {
 	font-size: 1.8rem;
-	margin: 0 2em 2em 2em;
+	margin: 0 2em 5em 2em;
 	color: #333;
 }
 
@@ -12,12 +12,13 @@
 	text-rendering: optimizeLegibility;
 }
 
-.section__header--sub {
+.section__header--group {
 	font-size: 1.5em;
 	margin-bottom: .6666666666666666em;
-	font-weight: 200;
-	font-style: normal;
-	text-rendering: optimizeLegibility;
+}
+
+.section__group {
+	margin-bottom: 2.5em;
 }
 
 .section__text {

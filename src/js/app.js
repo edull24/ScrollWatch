@@ -50,14 +50,14 @@
 
 	var setupDom = function() {
 
-		dom.connectShareBtn = document.querySelector('.site-header__connect-share-btn');
+		dom.socialToggle = document.getElementById('socialToggle');
 		dom.socialHeader = document.getElementById('socialHeader');
 
 	};
 
 	var addEventHandlers = function() {
 
-		dom.connectShareBtn.addEventListener('click', toggleConnectShare, false);
+		dom.socialToggle.addEventListener('click', toggleConnectShare, false);
 
 	};
 

@@ -1,6 +1,8 @@
 .feature-list {
 	font-size: 1.8rem;
 	color: #fff;
+	/* Reduce bottom margin to offset card bottom margin. */
+	margin-bottom: -.625em;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
