@@ -33,7 +33,7 @@
 			watch: '.feature-list__item',
 			onElementInView: function(data) {
 				unHide(data.el);
-				data.el.classList.add('tada');
+				data.el.classList.add('pulse');
 			}
 		});
 
