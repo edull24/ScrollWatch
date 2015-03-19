@@ -1,5 +1,7 @@
 (function() {
 
+	'use strict';
+
 	var dom = {};
 
 	var unHide = function(el) {
