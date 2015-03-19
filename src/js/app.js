@@ -28,12 +28,12 @@
 			}
 		});
 
-		// Flip feature cards.
+		// Feature cards.
 		new window.ScrollWatch({
 			watch: '.feature-list__item',
 			onElementInView: function(data) {
 				unHide(data.el);
-				data.el.classList.add('flipInX');
+				data.el.classList.add('tada');
 			}
 		});
 
