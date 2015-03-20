@@ -2,4 +2,4 @@
 
 var gulp = require('gulp');
 
-gulp.task('default', ['styles']);
+gulp.task('default', ['styles', 'markup']);

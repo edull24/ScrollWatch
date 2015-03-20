@@ -1,3 +1,14 @@
+/* Import vendor css. File contents will get inlined during build process. */
+@import url('../../src/css/vendor/reset.css');
+@import url('../../src/css/vendor/prism.css');
+@import url('../../node_modules/animate.css/source/_base.css');
+@import url('../../node_modules/animate.css/source/attention_seekers/tada.css');
+@import url('../../node_modules/animate.css/source/attention_seekers/rubberBand.css');
+@import url('../../node_modules/animate.css/source/attention_seekers/pulse.css');
+@import url('../../node_modules/animate.css/source/fading_entrances/fadeIn.css');
+@import url('../../node_modules/animate.css/source/fading_entrances/fadeInUp.css');
+@import url('../../node_modules/animate.css/source/lightspeed/lightSpeedIn.css');
+
 @import 'partials/base';
 @import 'partials/util';
 @import 'partials/site-header';
