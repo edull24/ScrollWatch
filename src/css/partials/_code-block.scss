@@ -1,5 +1,6 @@
 /* Override reset value so code blocks scroll. */
 .code-block[class*="language-"] {
-	font-size: 1.8rem;
+	font-size: scut-rem(18px);
 	word-wrap: normal;
+	-webkit-overflow-scrolling: touch;
 }

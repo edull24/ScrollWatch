@@ -2,18 +2,25 @@
 @import url('../../src/css/vendor/prism.css');
 @import url('../../node_modules/animate.css/source/_base.css');
 @import url('../../node_modules/animate.css/source/attention_seekers/tada.css');
-@import url('../../node_modules/animate.css/source/attention_seekers/rubberBand.css');
 @import url('../../node_modules/animate.css/source/attention_seekers/pulse.css');
 @import url('../../node_modules/animate.css/source/fading_entrances/fadeIn.css');
 @import url('../../node_modules/animate.css/source/fading_entrances/fadeInUp.css');
-@import url('../../node_modules/animate.css/source/lightspeed/lightSpeedIn.css');
+@import url('../../src/css/fonts/scrollwatch/style.css');
 /* Import vendor css. File contents will get inlined during build process. */
+/* Import custom icon font. */
+/* Vendor */
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.1.2
+* Docs at http://davidtheclark.github.io/scut
+*/
+/* App partials. */
 /* line 2, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_base.scss */
 html, body {
-  height: 100%;
-  font-size: 62.5%; }
+  height: 100%; }
 
-/* line 7, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_base.scss */
+/* line 6, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_base.scss */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -33,7 +40,7 @@ body {
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
 .site-header {
-  font-size: 3.6rem;
+  font-size: 2.25rem;
   margin-bottom: 2.5em;
   background-color: #0681CD;
   padding: 1em;
@@ -75,24 +82,12 @@ body {
   background-color: #fff;
   color: #0681CD; }
 
-/* line 46, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
-.site-header__social-toggle {
-  font-size: .5em;
-  color: inherit;
-  border: none;
-  border-bottom: 1px dotted #fff;
-  background: transparent;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 1em;
-  padding: 0; }
-
 @media only screen and (min-width: 40.063em) {
-  /* line 61, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  /* line 48, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
   .site-header__title {
     margin-left: 1em;
     margin-bottom: 2em; }
-  /* line 66, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  /* line 53, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
   .site-header__btn {
     width: auto;
     padding-left: 1.5em;
@@ -100,14 +95,14 @@ body {
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-footer.scss */
 .site-footer {
-  font-size: 1.6rem;
+  font-size: 1rem;
   background-color: #0681CD;
   padding: 3.6em;
   text-align: center; }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   position: relative;
   background-color: #fff;
   border-radius: 50%;
@@ -152,7 +147,7 @@ body {
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
 .section {
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   margin: 0 2em 5em 2em;
   color: #333; }
 
@@ -183,7 +178,7 @@ body {
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
 .feature-list {
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   color: #fff;
   /* Reduce bottom margin to offset card bottom margin. */
   margin-bottom: -.625em;
@@ -219,12 +214,13 @@ body {
 /* Override reset value so code blocks scroll. */
 /* line 2, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-block.scss */
 .code-block[class*="language-"] {
-  font-size: 1.8rem;
-  word-wrap: normal; }
+  font-size: 1.125rem;
+  word-wrap: normal;
+  -webkit-overflow-scrolling: touch; }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
 .code-list {
-  font-size: 1.8rem; }
+  font-size: 1.125rem; }
 
 /* line 5, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
 .code-list__term {
@@ -255,17 +251,98 @@ body {
 .code-list__term--nested code[class*="language-"] {
   padding: .1em .4em; }
 
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
-.social--header {
-  display: none; }
-
-/* line 5, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
-.social--header.is-expanded {
-  display: block; }
-
-/* line 9, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
-.social__btns {
-  font-size: 1rem;
+/* line 10, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+.social-btns {
+  font-size: 1.875rem;
+  color: #000;
   text-align: center;
-  line-height: 2.5;
-  margin-bottom: 1em; }
+  position: relative;
+  transition: padding .2s; }
+  /* line 17, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  .social-btns.has-selected {
+    padding-bottom: 1.66667em; }
+  /* line 23, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  .social-btns.has-selected > .social-btns__btn:not(.is-selected) > .social-btns__icon {
+    opacity: 0;
+    position: relative;
+    z-index: -1; }
+  /* line 29, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  .social-btns.has-selected > .social-btns__btn:first-child > .social-btns__icon {
+    transform: translateX(2.33333em); }
+  /* line 33, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  .social-btns.has-selected > .social-btns__btn:last-child > .social-btns__icon {
+    transform: translateX(-2.33333em); }
+  /* line 39, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  .social-btns--footer {
+    margin-bottom: 0.66667em; }
+  /* line 43, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  .social-btns--nested {
+    font-size: 0.8em;
+    color: inherit;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: all .2s; }
+  /* line 55, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  .social-btns__btn {
+    display: inline-block;
+    width: 1.66667em;
+    height: 1.66667em;
+    margin-right: 0.66667em; }
+    /* line 61, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    .social-btns__btn:last-child {
+      margin-right: 0; }
+    /* line 65, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    .social-btns__btn.is-selected .social-btns--nested {
+      opacity: 1;
+      z-index: 0; }
+    /* line 70, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    .social-btns__btn--nested {
+      width: 1.66667em;
+      height: 1.66667em;
+      margin-right: 0.41667em;
+      padding: 0; }
+    /* line 77, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    .social-btns__btn--twitter {
+      color: #00aced; }
+    /* line 81, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    .social-btns__btn--facebook {
+      color: #3b5998; }
+  /* line 87, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  .social-btns__icon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .2s; }
+  /* line 97, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  .social-btns__link {
+    color: inherit; }
+
+/* line 4, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
+.sw-icon--btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 12, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
+.sw-icon--btn::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+/* line 21, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
+.sw-icon--star-full.sw-icon--btn, .sw-icon--share.sw-icon--btn, .sw-icon--quill.sw-icon--btn {
+  font-size: .9em; }
+
+/* line 25, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
+.sw-icon--group-add.sw-icon--btn {
+  font-size: 1.1em; }

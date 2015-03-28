@@ -2,7 +2,26 @@
 
 	'use strict';
 
-	var dom = {};
+	var matches = function(el, selector) {
+
+		return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
+
+	};
+
+	var getClosest = function(element, selector) {
+
+		for (; element && element !== document; element = element.parentNode) {
+
+			if (matches(element, selector)) {
+
+				return element;
+			}
+
+		}
+
+		return false;
+
+	};
 
 	var unHide = function(el) {
 
@@ -39,52 +58,12 @@
 			}
 		});
 
-		// Header tagline.
-		new window.ScrollWatch({
-			watch: '.site-header__tagline',
-			onElementInView: function(data) {
-				unHide(data.el);
-				data.el.classList.add('rubberBand');
-			}
-		});
-
-	};
-
-	var setupDom = function() {
-
-		dom.socialToggle = document.getElementById('socialToggle');
-		dom.socialHeader = document.getElementById('socialHeader');
-
-	};
-
-	var addEventHandlers = function() {
-
-		dom.socialToggle.addEventListener('click', toggleConnectShare, false);
-
-	};
-
-	var toggleConnectShare = function(e) {
-
-		dom.socialHeader.classList.toggle('is-expanded');
-
 	};
 
 	var injectSocialJs = function() {
 
 		// Wait 1s to inject so css animations don't get janky.
 		window.setTimeout(function() {
-
-			// Load facebook js.
-			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-
-			// Load twitter js.
-			(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
 
 			/*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -101,9 +80,27 @@
 	var init = function() {
 
 		setupScrollWatch();
-		setupDom();
-		addEventHandlers();
 		injectSocialJs();
+
+		document.addEventListener('click', function(e) {
+
+			var target = e.target;
+			var btn;
+			var btnWrapper;
+
+			// console.log(target);
+
+			if (matches(target, '.social-btns__icon > .sw-icon--btn')) {
+
+				btn = getClosest(target, '.social-btns__btn');
+				btnWrapper = getClosest(target, '.social-btns');
+
+				btnWrapper.classList.toggle('has-selected');
+				btn.classList.toggle('is-selected');
+
+			}
+
+		}, false);
 
 	};
 

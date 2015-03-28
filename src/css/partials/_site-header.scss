@@ -1,5 +1,5 @@
 .site-header {
-	font-size: 3.6rem;
+	font-size: scut-rem(36px);
 	margin-bottom: 2.5em;
 	background-color: #0681CD;
 	padding: 1em;
@@ -41,19 +41,6 @@
 .site-header__btn:focus {
 	background-color: #fff;
 	color: #0681CD;
-}
-
-.site-header__social-toggle {
-	font-size: .5em;
-	color: inherit;
-	border: none;
-	border-bottom: 1px dotted #fff;
-	background: transparent;
-	display: block;
-	margin: 0 auto;
-	margin-bottom: 1em;
-	padding: 0;
-
 }
 
 @media only screen and (min-width: 40.063em) {

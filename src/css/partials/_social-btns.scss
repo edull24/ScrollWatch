@@ -1,14 +1,101 @@
-.social--header {
-	display: none;
-}
+$social-btns-font-size: 30px;
+$social-btns-nested-font-size: 24px;
+$btn-width: scut-em(50px, $social-btns-font-size);
+$btn-height: $btn-width;
+$btn-margin: scut-em(20px, $social-btns-font-size);
+$nested-btn-width: scut-em(40px, $social-btns-nested-font-size);
+$nested-btn-height: $nested-btn-width;
+$nested-btn-margin: scut-em(10px, $social-btns-nested-font-size);
 
-.social--header.is-expanded {
-	display: block
-}
-
-.social__btns {
-	font-size: 1rem;
+.social-btns {
+	font-size: scut-rem($social-btns-font-size);
+	color: #000;
 	text-align: center;
-	line-height: 2.5;
-	margin-bottom: 1em;
+	position: relative;
+	transition: padding .2s;
+
+	&.has-selected {
+		padding-bottom: $btn-height;
+	}
+
+	&.has-selected > &__btn {
+
+		&:not(.is-selected) > .social-btns__icon {
+			opacity: 0;
+			position: relative;
+			z-index: -1;
+		}
+
+		&:first-child > .social-btns__icon {
+			transform: translateX($btn-width + $btn-margin);
+		}
+
+		&:last-child > .social-btns__icon {
+			transform: translateX(-($btn-width + $btn-margin));
+		}
+
+	}
+
+	&--footer {
+		margin-bottom: scut-em(20px, $social-btns-font-size);
+	}
+
+	&--nested {
+		font-size: scut-em($social-btns-nested-font-size, $social-btns-font-size);
+		color: inherit;
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+		opacity: 0;
+		transition: all .2s;
+	}
+
+	&__btn {
+		display: inline-block;
+		width: $btn-width;
+		height: $btn-height;
+		margin-right: $btn-margin;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.is-selected .social-btns--nested {
+			opacity: 1;
+			z-index: 0;
+		}
+
+		&--nested {
+			width: $nested-btn-width;
+			height: $nested-btn-height;
+			margin-right: $nested-btn-margin;
+			padding: 0;
+		}
+
+		&--twitter {
+			color: #00aced;
+		}
+
+		&--facebook {
+			color: #3b5998;
+		}
+
+	}
+
+	&__icon {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: #eee;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: all .2s;
+	}
+
+	&__link {
+		color: inherit;
+	}
+
 }
