@@ -6,16 +6,6 @@
 	text-align: center;
 }
 
-.site-header__title {
-	margin-bottom: 1.5em;
-	margin-left: 1.5em;
-	word-break: break-all;
-	word-wrap: break-word;
-	font-weight: 200;
-	font-style: normal;
-	text-rendering: optimizeLegibility;
-}
-
 .site-header__tagline {
 	font-size: .75em;
 	margin-bottom: 1.5em;
@@ -44,11 +34,6 @@
 }
 
 @media only screen and (min-width: 40.063em) {
-
-	.site-header__title {
-		margin-left: 1em;
-		margin-bottom: 2em;
-	}
 
 	.site-header__btn {
 		width: auto;

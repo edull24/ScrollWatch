@@ -47,16 +47,6 @@ body {
   text-align: center; }
 
 /* line 9, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
-.site-header__title {
-  margin-bottom: 1.5em;
-  margin-left: 1.5em;
-  word-break: break-all;
-  word-wrap: break-word;
-  font-weight: 200;
-  font-style: normal;
-  text-rendering: optimizeLegibility; }
-
-/* line 19, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
 .site-header__tagline {
   font-size: .75em;
   margin-bottom: 1.5em;
@@ -65,7 +55,7 @@ body {
   font-style: normal;
   text-rendering: optimizeLegibility; }
 
-/* line 28, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+/* line 18, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
 .site-header__btn {
   color: inherit;
   margin-bottom: 1em;
@@ -77,17 +67,13 @@ body {
   display: inline-block;
   transition: .4s all; }
 
-/* line 41, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+/* line 31, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
 .site-header__btn:hover, .site-header__btn:focus {
   background-color: #fff;
   color: #0681CD; }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 48, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
-  .site-header__title {
-    margin-left: 1em;
-    margin-bottom: 2em; }
-  /* line 53, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  /* line 38, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
   .site-header__btn {
     width: auto;
     padding-left: 1.5em;
@@ -100,50 +86,49 @@ body {
   padding: 3.6em;
   text-align: center; }
 
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+/* line 5, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
 .logo {
-  font-size: 1.125rem;
-  position: relative;
-  background-color: #fff;
-  border-radius: 50%;
-  display: inline-block;
-  width: 12em;
-  height: 12em;
-  margin-bottom: .3em; }
+  font-size: 4.6875rem;
+  margin-bottom: 0.66667em;
+  letter-spacing: -0.06667em;
+  text-align: center; }
+  /* line 11, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  .logo__letter {
+    font-weight: 200;
+    font-style: normal;
+    text-rendering: optimizeLegibility; }
+    /* line 16, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+    .logo__letter--icon {
+      font-size: 2.4em;
+      display: inline-block;
+      position: relative;
+      top: 0.12222em;
+      left: 0.02778em;
+      animation-name: logo-icon-search;
+      animation-duration: 1.5s; }
+  /* line 28, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  .logo__letter:not(.logo__letter--icon) {
+    animation-name: fadeIn;
+    animation-delay: 1.5s; }
 
-/* Handle */
-/* line 13, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
-.logo::before {
-  content: '';
-  background-color: #fff;
-  width: 55%;
-  height: 20%;
-  position: absolute;
-  left: -20%;
-  bottom: -15%;
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
-  transform: rotate(-50deg); }
+@keyframes logo-icon-search {
 
-/* Inner circle.*/
-/* line 27, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
-.logo::after {
-  content: '';
-  position: absolute;
-  width: 65%;
-  height: 65%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #0681CD;
-  border-radius: 50%; }
+  /* line 37, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  25% {
+    transform: translateX(100%); }
 
-/* Medium min-width 641px */
-@media only screen and (min-width: 40.063em) {
-  /* line 42, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
-  .logo {
-    width: 17em;
-    height: 17em; } }
+  /* line 40, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  50% {
+    transform: translateX(-100%); }
+
+  /* line 43, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  75% {
+    transform: translateX(0);
+    font-size: 2.4em; }
+
+  /* line 47, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  100% {
+    font-size: 1em; } }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
 .section {

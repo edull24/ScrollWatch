@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'scrollwatch';
-	src:url('fonts/scrollwatch.eot?lq0dj0');
-	src:url('fonts/scrollwatch.eot?#iefixlq0dj0') format('embedded-opentype'),
-		url('fonts/scrollwatch.woff?lq0dj0') format('woff'),
-		url('fonts/scrollwatch.ttf?lq0dj0') format('truetype'),
-		url('fonts/scrollwatch.svg?lq0dj0#scrollwatch') format('svg');
+	src:url('fonts/scrollwatch.eot?ohn7ja');
+	src:url('fonts/scrollwatch.eot?#iefixohn7ja') format('embedded-opentype'),
+		url('fonts/scrollwatch.woff?ohn7ja') format('woff'),
+		url('fonts/scrollwatch.ttf?ohn7ja') format('truetype'),
+		url('fonts/scrollwatch.svg?ohn7ja#scrollwatch') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -25,6 +25,10 @@
 
 .sw-icon--group-add:before {
 	content: "\e605";
+}
+
+.sw-icon--search:before {
+	content: "\e607";
 }
 
 .sw-icon--share:before {
