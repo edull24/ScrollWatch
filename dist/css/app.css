@@ -98,19 +98,21 @@ body {
     text-rendering: optimizeLegibility; }
     /* line 16, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
     .logo__letter--icon {
-      font-size: 2.4em;
       display: inline-block;
       position: relative;
       top: 0.12222em;
       left: 0.02778em;
       animation-name: logo-icon-search;
       animation-duration: 1.5s; }
-  /* line 28, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 27, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   .logo__letter:not(.logo__letter--icon) {
     animation-name: fadeIn;
     animation-delay: 1.5s; }
 
 @keyframes logo-icon-search {
+  /* line 34, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  0% {
+    font-size: 2.4em; }
 
   /* line 37, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   25% {
