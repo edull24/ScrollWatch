@@ -32,7 +32,7 @@ $logo-animation-duration: 1.5s;
 
 @keyframes logo-icon-search {
 	0% {
-		font-size: 180px; scut-em($logo-icon-font-size, $logo-block-font-size);
+		font-size: 180px; /* scut-em($logo-icon-font-size, $logo-block-font-size); */
 	}
 	25% {
 		transform: translateX(100%);
