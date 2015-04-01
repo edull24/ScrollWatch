@@ -23,6 +23,40 @@
 
 	};
 
+	var whichTransitionEvent = function(){
+		var t;
+		var el = document.createElement('fakeelement');
+		var transitions = {
+			'transition': 'transitionend',
+			'OTransition': 'oTransitionEnd',
+			'MozTransition': 'transitionend',
+			'WebkitTransition': 'webkitTransitionEnd'
+		};
+
+		for(t in transitions){
+			if( el.style[t] !== undefined ){
+				return transitions[t];
+			}
+		}
+	};
+
+	var getAnimationEndEventName = function(){
+		var t;
+		var el = document.createElement('fakeelement');
+		var transitions = {
+			'animation': 'animationend',
+			'OAnimation': 'oAnimationEnd',
+			'MozAnimation': 'animationend',
+			'WebkitAnimation': 'webkitAnimationEnd'
+		};
+
+		for(t in transitions){
+			if( el.style[t] !== undefined ){
+				return transitions[t];
+			}
+		}
+	};
+
 	var unHide = function(el) {
 
 		el.classList.remove('hidden');
@@ -62,7 +96,18 @@
 
 	var init = function() {
 
+		var logoLetterIcon = document.getElementById('logo__letter--icon');
+
 		setupScrollWatch();
+
+		logoLetterIcon.addEventListener(getAnimationEndEventName(), function() {
+
+			// Search animation has ended. Change font size to trigger the
+			// transition.
+
+			logoLetterIcon.style.fontSize = '1em';
+
+		});
 
 		document.addEventListener('click', function(e) {
 

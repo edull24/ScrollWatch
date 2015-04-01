@@ -14,14 +14,14 @@ $logo-animation-duration: 1.5s;
 		text-rendering: optimizeLegibility;
 
 		&--icon {
-			// font-size: scut-em($logo-icon-font-size, $logo-block-font-size);
-			font-size: $logo-icon-font-size;
+			font-size: scut-em($logo-icon-font-size, $logo-block-font-size);
 			display: inline-block;
 			position: relative;
 			top: scut-em(22px, $logo-icon-font-size);
 			left: scut-em(5px, $logo-icon-font-size);
 			animation-name: logo-icon-search;
 			animation-duration: $logo-animation-duration;
+			transition: font-size 1s;
 		}
 	}
 
@@ -36,17 +36,18 @@ $logo-animation-duration: 1.5s;
 	0% {
 	}
 	25% {
-		// transform: translateX(100%);
+		transform: translateX(100%);
 	}
 	50% {
-		// transform: translateX(-100%);
+		transform: translateX(-100%);
 	}
 	75% {
-		// transform: translateX(0);
+		transform: translateX(0);
 		// font-size: scut-em($logo-icon-font-size, $logo-block-font-size);
-		font-size: $logo-icon-font-size;
 	}
 	100% {
-		font-size: 100%;
+		// font-size: 1em;
+		top: scut-em(22px, $logo-icon-font-size);
+		left: scut-em(5px, $logo-icon-font-size);
 	}
 }
