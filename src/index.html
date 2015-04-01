@@ -66,6 +66,30 @@
 
 		<section class="section">
 
+			<h1 class="section__header section__header--main animated sw-fadeInUp">Basic Usage</h1>
+
+			<p class="section__text animated sw-fadeIn">Include the library on your page.</p>
+
+			<pre class="code-block language-markup line-numbers animated sw-fadeIn"><code>&lt;script src="ScrollWatch.js">&lt;/script></code></pre>
+
+			<p class="section__text animated sw-fadeIn">
+				Create a new ScrollWatch instance and pass in an options object with an
+				<code class="section__inline-code language-javascript">onElementInView</code>
+				callback. By default, ScrollWatch will fire	your callback when any elements
+				with a <code class="section__inline-code language-javascript">data-scroll-watch</code>
+				attribute come into view. Check	out the API section below for all options.
+			</p>
+
+			<pre class="code-block language-javascript line-numbers animated sw-fadeIn"><code>var sw = new ScrollWatch({
+		onElementInView: function(data) {
+			console.log(data.el, '...is now in view');
+		}
+	});</code></pre>
+
+		</section>
+
+		<section class="section">
+
 			<h1 class="section__header animated sw-fadeInUp">API</h1>
 
 			<div class="section__group">
