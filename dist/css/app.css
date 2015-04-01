@@ -112,21 +112,17 @@ body {
 @keyframes logo-icon-search {
   /* line 34, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   0% {
-    font-size: 180px;
-    /* scut-em($logo-icon-font-size, $logo-block-font-size); */ }
+    font-size: 2.4em; }
 
-  /* line 37, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
-  25% {
-    transform: translateX(100%); }
 
-  /* line 40, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
-  50% {
-    transform: translateX(-100%); }
 
   /* line 43, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   75% {
-    transform: translateX(0); }
- }
+    font-size: 2.4em; }
+
+  /* line 47, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  100% {
+    font-size: 1em; } }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
 .section {
