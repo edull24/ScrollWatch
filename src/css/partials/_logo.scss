@@ -19,7 +19,7 @@ $logo-animation-duration: 1.5s;
 			position: relative;
 			top: scut-em(22px, $logo-icon-font-size);
 			left: scut-em(5px, $logo-icon-font-size);
-			// animation-name: logo-icon-search;
+			animation-name: logo-icon-search;
 			animation-duration: $logo-animation-duration;
 		}
 	}

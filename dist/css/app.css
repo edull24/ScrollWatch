@@ -103,6 +103,7 @@ body {
       position: relative;
       top: 0.12222em;
       left: 0.02778em;
+      animation-name: logo-icon-search;
       animation-duration: 1.5s; }
   /* line 28, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   .logo__letter:not(.logo__letter--icon) {
