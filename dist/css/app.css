@@ -122,11 +122,9 @@ body {
 
   /* line 43, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   75% {
-    transform: translateX(0); }
-
-  /* line 47, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
-  100% {
-    font-size: 1em; } }
+    transform: translateX(0);
+    font-size: 2.4em; }
+ }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
 .section {
