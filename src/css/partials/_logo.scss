@@ -1,53 +1,67 @@
-$logo-block-font-size: 75px;
-$logo-icon-font-size: 180px;
-$logo-animation-duration: 1.5s;
-
 .logo {
-	font-size: scut-rem($logo-block-font-size);
-	margin-bottom: scut-em(50px, $logo-block-font-size);
-	letter-spacing: scut-em(-5px, $logo-block-font-size);
+	$base-font-size: 38px;
+	$icon-font-size: 75px;
+	$logo-search-animation-duration: 1s;
+
+	@include media('>=medium') {
+		font-size: scut-rem(75px);
+	}
+
+	@include media('>=large') {
+		font-size: scut-rem(140px);
+	}
+
+	font-size: scut-rem($base-font-size);
+	margin-bottom: scut-em(40px, $base-font-size);
+	font-variant: small-caps;
 	text-align: center;
+	white-space: nowrap;
 
 	&__letter {
 		font-weight: 200;
 		font-style: normal;
 		text-rendering: optimizeLegibility;
+		margin-right: scut-em(-18px, $base-font-size);
+
+		&--cap {
+			margin-right: scut-em(-10px, $base-font-size);
+		}
 
 		&--icon {
-			font-size: scut-em($logo-icon-font-size, $logo-block-font-size);
+			font-size: scut-em($icon-font-size, $base-font-size);
 			display: inline-block;
 			position: relative;
-			top: scut-em(22px, $logo-icon-font-size);
-			left: scut-em(5px, $logo-icon-font-size);
-			animation-name: logo-icon-search;
-			animation-duration: $logo-animation-duration;
-			transition: font-size 1s;
+			top: scut-em(12px, $base-font-size);
+			left: scut-em(1px, $base-font-size);
+			animation-name: logo-search;
+			animation-duration: $logo-search-animation-duration;
+			transition: all 1s;
 		}
 	}
 
 	// Don't use parent selector in :not(), doesn't compile correctly.
 	&__letter:not(.logo__letter--icon) {
 		animation-name: fadeIn;
-		animation-delay: $logo-animation-duration;
+		// Wait for search animation to end.
+		animation-delay: $logo-search-animation-duration;
 	}
 }
 
-@keyframes logo-icon-search {
+// Would have this nested in .logo and use @at-root, but this isn't supported
+// in libsass yet.
+@keyframes logo-search {
 	0% {
 	}
-	25% {
+	33% {
+		// Search right.
 		transform: translateX(100%);
 	}
-	50% {
+	66% {
+		// Search left.
 		transform: translateX(-100%);
 	}
-	75% {
-		transform: translateX(0);
-		// font-size: scut-em($logo-icon-font-size, $logo-block-font-size);
-	}
 	100% {
-		// font-size: 1em;
-		top: scut-em(22px, $logo-icon-font-size);
-		left: scut-em(5px, $logo-icon-font-size);
+		// Go back to search start.
+		transform: translateX(0);
 	}
 }

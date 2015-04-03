@@ -23,22 +23,22 @@
 
 	};
 
-	var whichTransitionEvent = function(){
-		var t;
-		var el = document.createElement('fakeelement');
-		var transitions = {
-			'transition': 'transitionend',
-			'OTransition': 'oTransitionEnd',
-			'MozTransition': 'transitionend',
-			'WebkitTransition': 'webkitTransitionEnd'
-		};
+	// var whichTransitionEvent = function(){
+	// 	var t;
+	// 	var el = document.createElement('fakeelement');
+	// 	var transitions = {
+	// 		'transition': 'transitionend',
+	// 		'OTransition': 'oTransitionEnd',
+	// 		'MozTransition': 'transitionend',
+	// 		'WebkitTransition': 'webkitTransitionEnd'
+	// 	};
 
-		for(t in transitions){
-			if( el.style[t] !== undefined ){
-				return transitions[t];
-			}
-		}
-	};
+	// 	for(t in transitions){
+	// 		if( el.style[t] !== undefined ){
+	// 			return transitions[t];
+	// 		}
+	// 	}
+	// };
 
 	var getAnimationEndEventName = function(){
 		var t;
@@ -103,7 +103,8 @@
 		logoLetterIcon.addEventListener(getAnimationEndEventName(), function() {
 
 			// Search animation has ended. Change font size to trigger the
-			// transition.
+			// transition. Must use transition b/c mobile safari blows up
+			// when animating font size with ems.
 
 			logoLetterIcon.style.fontSize = '1em';
 

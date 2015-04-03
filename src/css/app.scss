@@ -6,13 +6,15 @@
 @import url('../../node_modules/animate.css/source/fading_entrances/fadeIn.css');
 @import url('../../node_modules/animate.css/source/fading_entrances/fadeInUp.css');
 
+/* Vendor SCSS. */
+@import 'vendor/scut';
+@import 'vendor/include-media';
+
 /* Import custom icon font. */
 @import url('../../src/css/fonts/scrollwatch/style.css');
 
-/* Vendor */
-@import 'vendor/scut';
-
 /* App partials. */
+@import 'partials/media';
 @import 'partials/base';
 @import 'partials/util';
 @import 'partials/site-header';
@@ -24,3 +26,11 @@
 @import 'partials/code-list';
 @import 'partials/social-btns';
 @import 'partials/sw-icon';
+
+
+/*
+
+Blocks sized as REM, everything inside block sized as EM. This allows blocks to
+scale and adjust independently.
+
+*/

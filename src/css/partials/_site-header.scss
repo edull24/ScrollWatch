@@ -1,44 +1,45 @@
 .site-header {
-	font-size: scut-rem(36px);
-	margin-bottom: 2.5em;
-	background-color: #0681CD;
-	padding: 1em;
-	text-align: center;
-}
+	$base-font-size: 36px;
+	$tagline-font-size: 28px;
+	$btn-font-size: 28px;
 
-.site-header__tagline {
-	font-size: .75em;
-	margin-bottom: 1.5em;
-	line-height: 1.4;
-	font-weight: 200;
-	font-style: normal;
-	text-rendering: optimizeLegibility;
-}
-
-.site-header__btn {
-	color: inherit;
-	margin-bottom: 1em;
-	text-decoration: none;
-	font-size: .75em;
-	border: 1px solid #fff;
-	padding: .5em 1em;
-	width: 100%;
-	display: inline-block;
-	transition: .4s all;
-}
-
-.site-header__btn:hover,
-.site-header__btn:focus {
-	background-color: #fff;
-	color: #0681CD;
-}
-
-@media only screen and (min-width: 40.063em) {
-
-	.site-header__btn {
+	@include media('>=medium') {
 		width: auto;
 		padding-left: 1.5em;
 		padding-right: 1.5em;
 	}
 
+	font-size: scut-rem($base-font-size);
+	margin-bottom: scut-em(90px, $base-font-size);
+	padding: 1em;
+	background-color: #0681CD;
+	text-align: center;
+
+	&__tagline {
+		font-size: scut-em($tagline-font-size, $base-font-size);
+		margin-bottom: scut-em(40px, $tagline-font-size);
+		line-height: 1.4;
+		font-weight: 200;
+		font-style: normal;
+		text-rendering: optimizeLegibility;
+	}
+
+	&__btn {
+		font-size: scut-em($btn-font-size, $base-font-size);
+		margin-bottom: scut-em(30px, $btn-font-size);
+		padding: .5em 1em;
+		color: inherit;
+		text-decoration: none;
+		border: 1px solid #fff;
+		width: 100%;
+		display: inline-block;
+		transition: .4s all;
+
+		&:hover,
+		&:focus {
+			background-color: #fff;
+			color: #0681CD;
+		}
+
+	}
 }

@@ -6,14 +6,14 @@
 @import url('../../node_modules/animate.css/source/fading_entrances/fadeInUp.css');
 @import url('../../src/css/fonts/scrollwatch/style.css');
 /* Import vendor css. File contents will get inlined during build process. */
-/* Import custom icon font. */
-/* Vendor */
+/* Vendor SCSS. */
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
 * v1.1.2
 * Docs at http://davidtheclark.github.io/scut
 */
+/* Import custom icon font. */
 /* App partials. */
 /* line 2, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_base.scss */
 html, body {
@@ -41,42 +41,37 @@ body {
 .site-header {
   font-size: 2.25rem;
   margin-bottom: 2.5em;
-  background-color: #0681CD;
   padding: 1em;
+  background-color: #0681CD;
   text-align: center; }
-
-/* line 9, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
-.site-header__tagline {
-  font-size: .75em;
-  margin-bottom: 1.5em;
-  line-height: 1.4;
-  font-weight: 200;
-  font-style: normal;
-  text-rendering: optimizeLegibility; }
-
-/* line 18, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
-.site-header__btn {
-  color: inherit;
-  margin-bottom: 1em;
-  text-decoration: none;
-  font-size: .75em;
-  border: 1px solid #fff;
-  padding: .5em 1em;
-  width: 100%;
-  display: inline-block;
-  transition: .4s all; }
-
-/* line 31, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
-.site-header__btn:hover, .site-header__btn:focus {
-  background-color: #fff;
-  color: #0681CD; }
-
-@media only screen and (min-width: 40.063em) {
-  /* line 38, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  @media (min-width: 40.063em) {
+    .site-header {
+      width: auto;
+      padding-left: 1.5em;
+      padding-right: 1.5em; } }
+  /* line 18, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  .site-header__tagline {
+    font-size: 0.77778em;
+    margin-bottom: 1.42857em;
+    line-height: 1.4;
+    font-weight: 200;
+    font-style: normal;
+    text-rendering: optimizeLegibility; }
+  /* line 27, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
   .site-header__btn {
-    width: auto;
-    padding-left: 1.5em;
-    padding-right: 1.5em; } }
+    font-size: 0.77778em;
+    margin-bottom: 1.07143em;
+    padding: .5em 1em;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid #fff;
+    width: 100%;
+    display: inline-block;
+    transition: .4s all; }
+    /* line 39, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+    .site-header__btn:hover, .site-header__btn:focus {
+      background-color: #fff;
+      color: #0681CD; }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-footer.scss */
 .site-footer {
@@ -85,50 +80,56 @@ body {
   padding: 3.6em;
   text-align: center; }
 
-/* line 5, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
 .logo {
-  font-size: 4.6875rem;
-  margin-bottom: 0.66667em;
-  letter-spacing: -0.06667em;
-  text-align: center; }
-  /* line 11, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  font-size: 2.375rem;
+  margin-bottom: 1.05263em;
+  font-variant: small-caps;
+  text-align: center;
+  white-space: nowrap; }
+  @media (min-width: 40.063em) {
+    .logo {
+      font-size: 4.6875rem; } }
+  @media (min-width: 64.063em) {
+    .logo {
+      font-size: 8.75rem; } }
+  /* line 20, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   .logo__letter {
     font-weight: 200;
     font-style: normal;
-    text-rendering: optimizeLegibility; }
-    /* line 16, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+    text-rendering: optimizeLegibility;
+    margin-right: -0.47368em; }
+    /* line 26, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+    .logo__letter--cap {
+      margin-right: -0.26316em; }
+    /* line 30, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
     .logo__letter--icon {
-      font-size: 2.4em;
+      font-size: 1.97368em;
       display: inline-block;
       position: relative;
-      top: 0.12222em;
-      left: 0.02778em;
-      animation-name: logo-icon-search;
-      animation-duration: 1.5s;
-      transition: font-size 1s; }
-  /* line 29, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+      top: 0.31579em;
+      left: 0.02632em;
+      animation-name: logo-search;
+      animation-duration: 1s;
+      transition: all 1s; }
+  /* line 43, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   .logo__letter:not(.logo__letter--icon) {
     animation-name: fadeIn;
-    animation-delay: 1.5s; }
+    animation-delay: 1s; }
 
-@keyframes logo-icon-search {
+@keyframes logo-search {
 
-  /* line 38, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
-  25% {
+  /* line 55, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  33% {
     transform: translateX(100%); }
 
-  /* line 41, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
-  50% {
+  /* line 59, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  66% {
     transform: translateX(-100%); }
 
-  /* line 44, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
-  75% {
-    transform: translateX(0); }
-
-  /* line 48, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 63, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   100% {
-    top: 0.12222em;
-    left: 0.02778em; } }
+    transform: translateX(0); } }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
 .section {
@@ -331,3 +332,10 @@ body {
 /* line 25, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
 .sw-icon--group-add.sw-icon--btn {
   font-size: 1.1em; }
+
+/*
+
+Blocks sized as REM, everything inside block sized as EM. This allows blocks to
+scale and adjust independently.
+
+*/
