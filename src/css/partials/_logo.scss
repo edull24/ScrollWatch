@@ -35,6 +35,7 @@
 			left: scut-em(1px, $base-font-size);
 			animation-name: logo-search;
 			animation-duration: $logo-search-animation-duration;
+			// Font size will be changed via js when animation ends.
 			transition: all 1s;
 		}
 	}

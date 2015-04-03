@@ -40,16 +40,11 @@ body {
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
 .site-header {
   font-size: 2.25rem;
-  margin-bottom: 2.5em;
+  margin-bottom: 1.38889em;
   padding: 1em;
   background-color: #0681CD;
   text-align: center; }
-  @media (min-width: 40.063em) {
-    .site-header {
-      width: auto;
-      padding-left: 1.5em;
-      padding-right: 1.5em; } }
-  /* line 18, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  /* line 12, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
   .site-header__tagline {
     font-size: 0.77778em;
     margin-bottom: 1.42857em;
@@ -57,17 +52,22 @@ body {
     font-weight: 200;
     font-style: normal;
     text-rendering: optimizeLegibility; }
-  /* line 27, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  /* line 21, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
   .site-header__btn {
     font-size: 0.77778em;
-    margin-bottom: 1.07143em;
-    padding: .5em 1em;
+    margin-bottom: 1.42857em;
+    padding: 0.5em 1em;
     color: inherit;
     text-decoration: none;
     border: 1px solid #fff;
     width: 100%;
     display: inline-block;
     transition: .4s all; }
+    @media (min-width: 40.063em) {
+      .site-header__btn {
+        width: auto;
+        padding-left: 1.5em;
+        padding-right: 1.5em; } }
     /* line 39, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
     .site-header__btn:hover, .site-header__btn:focus {
       background-color: #fff;
@@ -112,22 +112,22 @@ body {
       animation-name: logo-search;
       animation-duration: 1s;
       transition: all 1s; }
-  /* line 43, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 44, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   .logo__letter:not(.logo__letter--icon) {
     animation-name: fadeIn;
     animation-delay: 1s; }
 
 @keyframes logo-search {
 
-  /* line 55, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 56, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   33% {
     transform: translateX(100%); }
 
-  /* line 59, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 60, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   66% {
     transform: translateX(-100%); }
 
-  /* line 63, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 64, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   100% {
     transform: translateX(0); } }
 

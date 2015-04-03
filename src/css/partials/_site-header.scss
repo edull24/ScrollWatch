@@ -3,15 +3,9 @@
 	$tagline-font-size: 28px;
 	$btn-font-size: 28px;
 
-	@include media('>=medium') {
-		width: auto;
-		padding-left: 1.5em;
-		padding-right: 1.5em;
-	}
-
 	font-size: scut-rem($base-font-size);
-	margin-bottom: scut-em(90px, $base-font-size);
-	padding: 1em;
+	margin-bottom: scut-em(50px, $base-font-size);
+	padding: scut-em($base-font-size, $base-font-size);
 	background-color: #0681CD;
 	text-align: center;
 
@@ -25,9 +19,15 @@
 	}
 
 	&__btn {
+		@include media('>=medium') {
+			width: auto;
+			padding-left: scut-em($btn-font-size * 1.5, $btn-font-size);
+			padding-right: scut-em($btn-font-size * 1.5, $btn-font-size);
+		}
+
 		font-size: scut-em($btn-font-size, $base-font-size);
-		margin-bottom: scut-em(30px, $btn-font-size);
-		padding: .5em 1em;
+		margin-bottom: scut-em(40px, $btn-font-size);
+		padding: scut-em($btn-font-size / 2, $btn-font-size) scut-em($btn-font-size, $btn-font-size);
 		color: inherit;
 		text-decoration: none;
 		border: 1px solid #fff;
