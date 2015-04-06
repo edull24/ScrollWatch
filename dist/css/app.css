@@ -97,7 +97,7 @@ body {
   .logo__letter {
     font-weight: 200;
     font-style: normal; }
-    /* line 31, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+    /* line 25, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
     .logo__letter--icon {
       font-size: 1.97368em;
       display: inline-block;
@@ -107,22 +107,22 @@ body {
       animation-duration: 1s;
       animation-name: logo-search;
       transition: font-size 1s, top 1s, left 1s; }
-  /* line 50, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 44, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   .logo__letter:not(.logo__letter--icon) {
     animation-name: fadeIn;
     animation-delay: 1s; }
 
 @keyframes logo-search {
 
-  /* line 62, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 56, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   33% {
     transform: translateX(100%); }
 
-  /* line 66, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 60, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   66% {
     transform: translateX(-100%); }
 
-  /* line 70, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 64, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   100% {
     transform: translateX(0); } }
 
