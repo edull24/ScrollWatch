@@ -1,11 +1,11 @@
 .social-btns {
 	$base-font-size: 32px;
-	$nested-font-size: $base-font-size * .8;
+	$nested-font-size: $base-font-size * 1;
 	$btn-width-px: $base-font-size * 1.6;
 	$btn-width: scut-em($btn-width-px, $base-font-size);
 	$btn-height: $btn-width;
 	$btn-margin: $btn-width * .75;
-	$nested-btn-width: scut-em($btn-width-px * .8, $nested-font-size);
+	$nested-btn-width: scut-em($btn-width-px * 1, $nested-font-size);
 	$nested-btn-height: $nested-btn-width;
 	$nested-btn-margin: $nested-btn-width * .75;
 
@@ -16,7 +16,7 @@
 	transition: padding .2s;
 
 	&.has-selected {
-		padding-bottom: $btn-height * 1.25;
+		padding-bottom: $btn-height * 1.5;
 	}
 
 	&.has-selected > &__btn {

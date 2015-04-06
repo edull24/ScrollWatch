@@ -241,7 +241,7 @@ body {
   transition: padding .2s; }
   /* line 18, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected {
-    padding-bottom: 2em; }
+    padding-bottom: 2.4em; }
   /* line 24, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:not(.is-selected) > .social-btns__icon {
     opacity: 0;
@@ -258,7 +258,7 @@ body {
     margin-bottom: 0.625em; }
   /* line 44, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns--nested {
-    font-size: 0.8em;
+    font-size: 1em;
     color: inherit;
     position: absolute;
     width: 100%;
