@@ -134,24 +134,31 @@ body {
   font-size: 1.125rem;
   margin: 0 2em 5em 2em;
   color: #333; }
-  /* line 10, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 11, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  .section__permalink {
+    text-decoration: none;
+    color: inherit; }
+    /* line 15, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+    .section__permalink-icon {
+      font-size: 0.72222em; }
+  /* line 20, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__header {
     font-size: 2em;
     margin-bottom: 0.5em;
     font-weight: 200;
     font-style: normal;
     text-rendering: optimizeLegibility; }
-    /* line 17, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+    /* line 27, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
     .section__header--group {
       font-size: 1.5em;
       margin-bottom: 0.66667em; }
-  /* line 23, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 33, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__group {
     margin-bottom: 2.5em; }
-  /* line 27, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 37, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__text {
     margin-bottom: 1em; }
-  /* line 31, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 41, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__inline-code[class*="language-"] {
     padding: 0 0.44444em; }
 

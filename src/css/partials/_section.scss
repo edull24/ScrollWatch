@@ -2,10 +2,20 @@
 	$base-font-size: 18px;
 	$header-font-size: $base-font-size * 2;
 	$header-group-font-size: $header-font-size * .75;
+	$permalink-font-size: 26px;
 
 	font-size: scut-rem($base-font-size);
 	margin: 0 scut-em(36px, $base-font-size) scut-em(90px, $base-font-size) scut-em(36px, $base-font-size);
 	color: #333;
+
+	&__permalink {
+		text-decoration: none;
+		color: inherit;
+
+		&-icon {
+			font-size: scut-em($permalink-font-size, $header-font-size);
+		}
+	}
 
 	&__header {
 		font-size: scut-em($header-font-size, $base-font-size);
