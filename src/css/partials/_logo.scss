@@ -6,10 +6,12 @@
 
 	@include media('>=medium') {
 		font-size: scut-rem(75px);
+		margin-bottom: scut-em(40px, 75px);
 	}
 
 	@include media('>=large') {
 		font-size: scut-rem(140px);
+		margin-bottom: scut-em(65px, 140px);
 	}
 
 	font-size: scut-rem($base-font-size);
