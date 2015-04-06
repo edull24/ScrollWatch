@@ -1,19 +1,16 @@
 .social-btns {
 	$base-font-size: 32px;
-	$nested-font-size: $base-font-size * 1;
 	$btn-width-px: $base-font-size * 1.6;
 	$btn-width: scut-em($btn-width-px, $base-font-size);
 	$btn-height: $btn-width;
 	$btn-margin: $btn-width * .75;
-	$nested-btn-width: scut-em($btn-width-px * 1, $nested-font-size);
-	$nested-btn-height: $nested-btn-width;
-	$nested-btn-margin: $nested-btn-width * .75;
+	$transition-speed: 1s;
 
 	font-size: scut-rem($base-font-size);
 	color: #000;
 	text-align: center;
 	position: relative;
-	transition: padding .2s;
+	transition: padding $transition-speed;
 
 	&.has-selected {
 		padding-bottom: $btn-height * 1.5;
@@ -23,7 +20,6 @@
 
 		&:not(.is-selected) > .social-btns__icon {
 			opacity: 0;
-			position: relative;
 			z-index: -1;
 		}
 
@@ -42,7 +38,6 @@
 	}
 
 	&--nested {
-		font-size: scut-em($nested-font-size, $base-font-size);
 		color: inherit;
 		position: absolute;
 		width: 100%;
@@ -50,7 +45,7 @@
 		bottom: 0;
 		z-index: -1;
 		opacity: 0;
-		transition: all .2s;
+		transition: all $transition-speed;
 	}
 
 	&__btn {
@@ -65,14 +60,7 @@
 
 		&.is-selected .social-btns--nested {
 			opacity: 1;
-			z-index: 0;
-		}
-
-		&--nested {
-			width: $nested-btn-width;
-			height: $nested-btn-height;
-			margin-right: $nested-btn-margin;
-			padding: 0;
+			z-index: 1;
 		}
 
 		&--twitter {
@@ -92,7 +80,8 @@
 		background-color: #eee;
 		border-radius: 50%;
 		cursor: pointer;
-		transition: all .2s;
+		z-index: 1;
+		transition: all $transition-speed;
 	}
 
 	&__link {
