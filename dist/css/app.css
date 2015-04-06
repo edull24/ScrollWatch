@@ -241,7 +241,7 @@ body {
   transition: padding .2s; }
   /* line 18, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected {
-    padding-bottom: 1.6em; }
+    padding-bottom: 2em; }
   /* line 24, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:not(.is-selected) > .social-btns__icon {
     opacity: 0;

@@ -16,7 +16,7 @@
 	transition: padding .2s;
 
 	&.has-selected {
-		padding-bottom: $btn-height;
+		padding-bottom: $btn-height * 1.25;
 	}
 
 	&.has-selected > &__btn {
