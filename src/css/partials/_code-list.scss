@@ -1,32 +1,36 @@
 .code-list {
-	font-size: scut-rem(18px);
-}
+	$base-font-size: 18px;
+	$code-padding-top-bottom: 4px;
+	$code-padding-left-right: 8px;
 
-.code-list__term {
-	margin-bottom: .5em;
-}
+	font-size: scut-rem($base-font-size);
 
-.code-list__description {
-	margin-bottom: 1.5em;
-	margin-left: 1em;
-}
+	&__term {
+		margin-bottom: .5em;
+	}
 
-/* Prism override. */
-.code-list__term code[class*="language-"] {
-	display: inline-block;
-	padding: .25em .5em;
-	overflow: auto;
-	max-width: 100%;
-}
+	&__description {
+		margin-bottom: 1.5em;
+		margin-left: 1em;
+	}
 
-.code-list__term--nested {
-	margin-left: 2em;
-}
+	/* Prism override. */
+	&__term code[class*="language-"] {
+		display: inline-block;
+		padding: scut-em($code-padding-top-bottom, $base-font-size) scut-em($code-padding-left-right, $base-font-size);
+		overflow: auto;
+		max-width: 100%;
+	}
 
-.code-list__description--nested {
-	margin-left: 3em;
-}
+	&__term--nested {
+		margin-left: 2em;
+	}
 
-.code-list__term--nested code[class*="language-"] {
-	padding: .1em .4em;
+	&__description--nested {
+		margin-left: 3em;
+	}
+
+	&__term--nested code[class*="language-"] {
+		padding: scut-em($code-padding-top-bottom / 2, $base-font-size) scut-em($code-padding-left-right / 2, $base-font-size);
+	}
 }

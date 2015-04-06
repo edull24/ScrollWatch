@@ -1,30 +1,34 @@
 .section {
-	font-size: scut-rem(18px);
-	margin: 0 2em 5em 2em;
+	$base-font-size: 18px;
+	$header-font-size: $base-font-size * 2;
+	$header-group-font-size: $header-font-size * .75;
+
+	font-size: scut-rem($base-font-size);
+	margin: 0 scut-em(36px, $base-font-size) scut-em(90px, $base-font-size) scut-em(36px, $base-font-size);
 	color: #333;
-}
 
-.section__header {
-	font-size: 2em;
-	margin-bottom: .5em;
-	font-weight: 200;
-	font-style: normal;
-	text-rendering: optimizeLegibility;
-}
+	&__header {
+		font-size: scut-em($header-font-size, $base-font-size);
+		margin-bottom: scut-em($base-font-size, $header-font-size);
+		font-weight: 200;
+		font-style: normal;
+		text-rendering: optimizeLegibility;
 
-.section__header--group {
-	font-size: 1.5em;
-	margin-bottom: .6666666666666666em;
-}
+		&--group {
+			font-size: scut-em($header-group-font-size, $base-font-size);
+			margin-bottom: scut-em($base-font-size, $header-group-font-size);
+		}
+	}
 
-.section__group {
-	margin-bottom: 2.5em;
-}
+	&__group {
+		margin-bottom: scut-em(45px, $base-font-size);
+	}
 
-.section__text {
-	margin-bottom: 1em;
-}
+	&__text {
+		margin-bottom: scut-em($base-font-size, $base-font-size);
+	}
 
-.section__inline-code[class*="language-"] {
-	padding: 0 .4em;
+	&__inline-code[class*="language-"] {
+		padding: 0 scut-em(8px, $base-font-size);
+	}
 }

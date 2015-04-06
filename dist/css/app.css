@@ -134,66 +134,59 @@ body {
   font-size: 1.125rem;
   margin: 0 2em 5em 2em;
   color: #333; }
-
-/* line 7, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
-.section__header {
-  font-size: 2em;
-  margin-bottom: .5em;
-  font-weight: 200;
-  font-style: normal;
-  text-rendering: optimizeLegibility; }
-
-/* line 15, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
-.section__header--group {
-  font-size: 1.5em;
-  margin-bottom: .66667em; }
-
-/* line 20, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
-.section__group {
-  margin-bottom: 2.5em; }
-
-/* line 24, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
-.section__text {
-  margin-bottom: 1em; }
-
-/* line 28, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
-.section__inline-code[class*="language-"] {
-  padding: 0 .4em; }
+  /* line 10, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  .section__header {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    font-weight: 200;
+    font-style: normal;
+    text-rendering: optimizeLegibility; }
+    /* line 17, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+    .section__header--group {
+      font-size: 1.5em;
+      margin-bottom: 0.66667em; }
+  /* line 23, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  .section__group {
+    margin-bottom: 2.5em; }
+  /* line 27, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  .section__text {
+    margin-bottom: 1em; }
+  /* line 31, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  .section__inline-code[class*="language-"] {
+    padding: 0 0.44444em; }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
 .feature-list {
   font-size: 1.125rem;
   color: #fff;
   /* Reduce bottom margin to offset card bottom margin. */
-  margin-bottom: -.625em;
+  margin-bottom: -0.61111em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
   align-items: flex-start; }
-
-/* line 14, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
-.feature-list__item {
-  background-color: #0681CD;
-  padding: 2em;
-  margin: .625em;
-  border-radius: .3125em;
-  max-width: 100%;
-  height: 9.375em;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 18.75em; }
-
-/* line 30, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
-.feature-list__link {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px dotted #fff; }
+  /* line 16, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
+  .feature-list__item {
+    background-color: #0681CD;
+    padding: 2em;
+    margin: 0.61111em;
+    border-radius: 0.33333em;
+    max-width: 100%;
+    height: 9.44444em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 18.77778em; }
+  /* line 32, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
+  .feature-list__link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted #fff; }
 
 /* Override reset value so code blocks scroll. */
 /* line 2, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-block.scss */
@@ -204,36 +197,30 @@ body {
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
 .code-list {
-  font-size: 1.125rem; }
-
-/* line 5, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
-.code-list__term {
-  margin-bottom: .5em; }
-
-/* line 9, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
-.code-list__description {
-  margin-bottom: 1.5em;
-  margin-left: 1em; }
-
-/* Prism override. */
-/* line 15, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
-.code-list__term code[class*="language-"] {
-  display: inline-block;
-  padding: .25em .5em;
-  overflow: auto;
-  max-width: 100%; }
-
-/* line 22, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
-.code-list__term--nested {
-  margin-left: 2em; }
-
-/* line 26, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
-.code-list__description--nested {
-  margin-left: 3em; }
-
-/* line 30, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
-.code-list__term--nested code[class*="language-"] {
-  padding: .1em .4em; }
+  font-size: 1.125rem;
+  /* Prism override. */ }
+  /* line 8, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  .code-list__term {
+    margin-bottom: .5em; }
+  /* line 12, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  .code-list__description {
+    margin-bottom: 1.5em;
+    margin-left: 1em; }
+  /* line 18, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  .code-list__term code[class*="language-"] {
+    display: inline-block;
+    padding: 0.22222em 0.44444em;
+    overflow: auto;
+    max-width: 100%; }
+  /* line 25, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  .code-list__term--nested {
+    margin-left: 2em; }
+  /* line 29, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  .code-list__description--nested {
+    margin-left: 3em; }
+  /* line 33, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  .code-list__term--nested code[class*="language-"] {
+    padding: 0.11111em 0.22222em; }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
 .social-btns {
