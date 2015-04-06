@@ -63,6 +63,43 @@
 
 	};
 
+	var addEventHandlers = function() {
+
+		var logoLetterIcon = document.getElementById('logo__letter--icon');
+
+		logoLetterIcon.addEventListener(getAnimationEndEventName(), function() {
+
+			// Search animation has ended. Change font size to trigger the
+			// transition. Must use transition b/c mobile safari blows up
+			// when animating font size with ems.
+
+			logoLetterIcon.style.fontSize = '1em';
+
+		});
+
+		document.addEventListener('click', function(e) {
+
+			var target = e.target;
+			var btn;
+			var btnWrapper;
+
+			// console.log(target);
+
+			// Handle social icon clicks.
+			if (matches(target, '.social-btns__icon > .sw-icon--btn')) {
+
+				btn = getClosest(target, '.social-btns__btn');
+				btnWrapper = getClosest(target, '.social-btns');
+
+				btnWrapper.classList.toggle('has-selected');
+				btn.classList.toggle('is-selected');
+
+			}
+
+		}, false);
+
+	};
+
 	var setupScrollWatch = function() {
 
 		// Elements to fadeInUP.
@@ -96,39 +133,8 @@
 
 	var init = function() {
 
-		var logoLetterIcon = document.getElementById('logo__letter--icon');
-
+		addEventHandlers();
 		setupScrollWatch();
-
-		logoLetterIcon.addEventListener(getAnimationEndEventName(), function() {
-
-			// Search animation has ended. Change font size to trigger the
-			// transition. Must use transition b/c mobile safari blows up
-			// when animating font size with ems.
-
-			logoLetterIcon.style.fontSize = '1em';
-
-		});
-
-		document.addEventListener('click', function(e) {
-
-			var target = e.target;
-			var btn;
-			var btnWrapper;
-
-			// console.log(target);
-
-			if (matches(target, '.social-btns__icon > .sw-icon--btn')) {
-
-				btn = getClosest(target, '.social-btns__btn');
-				btnWrapper = getClosest(target, '.social-btns');
-
-				btnWrapper.classList.toggle('has-selected');
-				btn.classList.toggle('is-selected');
-
-			}
-
-		}, false);
 
 	};
 
