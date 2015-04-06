@@ -234,14 +234,14 @@ body {
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
 .social-btns {
-  font-size: 1.875rem;
+  font-size: 2rem;
   color: #000;
   text-align: center;
   position: relative;
   transition: padding .2s; }
   /* line 18, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected {
-    padding-bottom: 1.66667em; }
+    padding-bottom: 1.6em; }
   /* line 24, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:not(.is-selected) > .social-btns__icon {
     opacity: 0;
@@ -249,13 +249,13 @@ body {
     z-index: -1; }
   /* line 30, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:first-child > .social-btns__icon {
-    transform: translateX(2.5em); }
+    transform: translateX(2.8em); }
   /* line 34, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:last-child > .social-btns__icon {
-    transform: translateX(-2.5em); }
+    transform: translateX(-2.8em); }
   /* line 40, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns--footer {
-    margin-bottom: 0.66667em; }
+    margin-bottom: 0.625em; }
   /* line 44, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns--nested {
     font-size: 0.8em;
@@ -270,9 +270,9 @@ body {
   /* line 56, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns__btn {
     display: inline-block;
-    width: 1.66667em;
-    height: 1.66667em;
-    margin-right: 0.83333em; }
+    width: 1.6em;
+    height: 1.6em;
+    margin-right: 1.2em; }
     /* line 62, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn:last-child {
       margin-right: 0; }
@@ -282,9 +282,9 @@ body {
       z-index: 0; }
     /* line 71, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn--nested {
-      width: 1.66667em;
-      height: 1.66667em;
-      margin-right: 0.83333em;
+      width: 1.6em;
+      height: 1.6em;
+      margin-right: 1.2em;
       padding: 0; }
     /* line 78, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn--twitter {

@@ -1,13 +1,13 @@
 .social-btns {
-	$base-font-size: 30px;
+	$base-font-size: 32px;
 	$nested-font-size: $base-font-size * .8;
-	$btn-width-px: 50px;
+	$btn-width-px: $base-font-size * 1.6;
 	$btn-width: scut-em($btn-width-px, $base-font-size);
 	$btn-height: $btn-width;
-	$btn-margin: $btn-width * .5;
+	$btn-margin: $btn-width * .75;
 	$nested-btn-width: scut-em($btn-width-px * .8, $nested-font-size);
 	$nested-btn-height: $nested-btn-width;
-	$nested-btn-margin: $nested-btn-width * .5;
+	$nested-btn-margin: $nested-btn-width * .75;
 
 	font-size: scut-rem($base-font-size);
 	color: #000;
