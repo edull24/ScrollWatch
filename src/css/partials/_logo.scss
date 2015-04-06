@@ -2,6 +2,7 @@
 	$base-font-size: 38px;
 	$icon-font-size: 75px;
 	$logo-search-animation-duration: 1s;
+	$logo-search-transition-duration: 1s;
 
 	@include media('>=medium') {
 		font-size: scut-rem(75px);
@@ -20,23 +21,28 @@
 	&__letter {
 		font-weight: 200;
 		font-style: normal;
-		text-rendering: optimizeLegibility;
-		margin-right: scut-em(-18px, $base-font-size);
+		// margin-right: scut-em(-18px, $base-font-size);
+		// margin-right: -18px;
 
-		&--cap {
-			margin-right: scut-em(-10px, $base-font-size);
-		}
+		// &--cap {
+		// 	margin-right: scut-em(-10px, $base-font-size);
+		// }
 
 		&--icon {
 			font-size: scut-em($icon-font-size, $base-font-size);
 			display: inline-block;
 			position: relative;
 			top: scut-em(12px, $base-font-size);
-			left: scut-em(1px, $base-font-size);
-			animation-name: logo-search;
+			left: scut-em(4px, $base-font-size);
 			animation-duration: $logo-search-animation-duration;
+			animation-name: logo-search;
 			// Font size will be changed via js when animation ends.
-			transition: all 1s;
+			// Must use transitions b/c mobile safari blows up on
+			// font-size animation.
+			// Can't use 'all' keyword, b/c firefox won't run the
+			// animation on load. Appears the 'all' is applied to
+			// animations as well in some fashion.
+			transition: font-size $logo-search-transition-duration, top $logo-search-transition-duration, left $logo-search-transition-duration;
 		}
 	}
 

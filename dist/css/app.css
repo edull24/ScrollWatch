@@ -93,41 +93,36 @@ body {
   @media (min-width: 64.063em) {
     .logo {
       font-size: 8.75rem; } }
-  /* line 20, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 21, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   .logo__letter {
     font-weight: 200;
-    font-style: normal;
-    text-rendering: optimizeLegibility;
-    margin-right: -0.47368em; }
-    /* line 26, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
-    .logo__letter--cap {
-      margin-right: -0.26316em; }
-    /* line 30, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+    font-style: normal; }
+    /* line 31, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
     .logo__letter--icon {
       font-size: 1.97368em;
       display: inline-block;
       position: relative;
       top: 0.31579em;
-      left: 0.02632em;
-      animation-name: logo-search;
+      left: 0.10526em;
       animation-duration: 1s;
-      transition: all 1s; }
-  /* line 44, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+      animation-name: logo-search;
+      transition: font-size 1s, top 1s, left 1s; }
+  /* line 50, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   .logo__letter:not(.logo__letter--icon) {
     animation-name: fadeIn;
     animation-delay: 1s; }
 
 @keyframes logo-search {
 
-  /* line 56, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 62, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   33% {
     transform: translateX(100%); }
 
-  /* line 60, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 66, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   66% {
     transform: translateX(-100%); }
 
-  /* line 64, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 70, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
   100% {
     transform: translateX(0); } }
 
