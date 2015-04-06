@@ -232,31 +232,31 @@ body {
 .code-list__term--nested code[class*="language-"] {
   padding: .1em .4em; }
 
-/* line 10, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
 .social-btns {
   font-size: 1.875rem;
   color: #000;
   text-align: center;
   position: relative;
   transition: padding .2s; }
-  /* line 17, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 18, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected {
     padding-bottom: 1.66667em; }
-  /* line 23, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 24, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:not(.is-selected) > .social-btns__icon {
     opacity: 0;
     position: relative;
     z-index: -1; }
-  /* line 29, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 30, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:first-child > .social-btns__icon {
-    transform: translateX(2.33333em); }
-  /* line 33, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    transform: translateX(2.5em); }
+  /* line 34, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:last-child > .social-btns__icon {
-    transform: translateX(-2.33333em); }
-  /* line 39, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    transform: translateX(-2.5em); }
+  /* line 40, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns--footer {
     margin-bottom: 0.66667em; }
-  /* line 43, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 44, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns--nested {
     font-size: 0.8em;
     color: inherit;
@@ -267,32 +267,32 @@ body {
     z-index: -1;
     opacity: 0;
     transition: all .2s; }
-  /* line 55, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 56, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns__btn {
     display: inline-block;
     width: 1.66667em;
     height: 1.66667em;
-    margin-right: 0.66667em; }
-    /* line 61, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    margin-right: 0.83333em; }
+    /* line 62, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn:last-child {
       margin-right: 0; }
-    /* line 65, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    /* line 66, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn.is-selected .social-btns--nested {
       opacity: 1;
       z-index: 0; }
-    /* line 70, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    /* line 71, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn--nested {
       width: 1.66667em;
       height: 1.66667em;
-      margin-right: 0.41667em;
+      margin-right: 0.83333em;
       padding: 0; }
-    /* line 77, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    /* line 78, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn--twitter {
       color: #00aced; }
-    /* line 81, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    /* line 82, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn--facebook {
       color: #3b5998; }
-  /* line 87, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 88, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns__icon {
     position: relative;
     width: 100%;
@@ -301,7 +301,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     transition: all .2s; }
-  /* line 97, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 98, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns__link {
     color: inherit; }
 

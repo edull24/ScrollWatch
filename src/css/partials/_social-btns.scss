@@ -1,14 +1,15 @@
-$social-btns-font-size: 30px;
-$social-btns-nested-font-size: 24px;
-$btn-width: scut-em(50px, $social-btns-font-size);
-$btn-height: $btn-width;
-$btn-margin: scut-em(20px, $social-btns-font-size);
-$nested-btn-width: scut-em(40px, $social-btns-nested-font-size);
-$nested-btn-height: $nested-btn-width;
-$nested-btn-margin: scut-em(10px, $social-btns-nested-font-size);
-
 .social-btns {
-	font-size: scut-rem($social-btns-font-size);
+	$base-font-size: 30px;
+	$nested-font-size: $base-font-size * .8;
+	$btn-width-px: 50px;
+	$btn-width: scut-em($btn-width-px, $base-font-size);
+	$btn-height: $btn-width;
+	$btn-margin: $btn-width * .5;
+	$nested-btn-width: scut-em($btn-width-px * .8, $nested-font-size);
+	$nested-btn-height: $nested-btn-width;
+	$nested-btn-margin: $nested-btn-width * .5;
+
+	font-size: scut-rem($base-font-size);
 	color: #000;
 	text-align: center;
 	position: relative;
@@ -37,11 +38,11 @@ $nested-btn-margin: scut-em(10px, $social-btns-nested-font-size);
 	}
 
 	&--footer {
-		margin-bottom: scut-em(20px, $social-btns-font-size);
+		margin-bottom: scut-em(20px, $base-font-size);
 	}
 
 	&--nested {
-		font-size: scut-em($social-btns-nested-font-size, $social-btns-font-size);
+		font-size: scut-em($nested-font-size, $base-font-size);
 		color: inherit;
 		position: absolute;
 		width: 100%;
