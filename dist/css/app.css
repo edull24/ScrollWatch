@@ -43,8 +43,9 @@ body {
   margin-bottom: 1.38889em;
   padding: 1em;
   background-color: #0681CD;
-  text-align: center; }
-  /* line 12, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  text-align: center;
+  transform: translateZ(0); }
+  /* line 14, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
   .site-header__tagline {
     font-size: 0.77778em;
     margin-bottom: 1.42857em;
@@ -52,7 +53,7 @@ body {
     font-weight: 200;
     font-style: normal;
     text-rendering: optimizeLegibility; }
-  /* line 21, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  /* line 23, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
   .site-header__btn {
     font-size: 0.77778em;
     margin-bottom: 1.42857em;
@@ -68,7 +69,7 @@ body {
         width: auto;
         padding-left: 1.5em;
         padding-right: 1.5em; } }
-    /* line 39, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+    /* line 41, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
     .site-header__btn:hover, .site-header__btn:focus {
       background-color: #fff;
       color: #0681CD; }
@@ -238,7 +239,7 @@ body {
   color: #000;
   text-align: center;
   position: relative;
-  transition: padding 1s; }
+  transition: padding 0.2s; }
   /* line 15, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected {
     padding-bottom: 2.4em; }
@@ -264,7 +265,7 @@ body {
     bottom: 0;
     z-index: -1;
     opacity: 0;
-    transition: all 1s; }
+    transition: all 0.2s; }
   /* line 51, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns__btn {
     display: inline-block;
@@ -293,7 +294,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     z-index: 1;
-    transition: all 1s; }
+    transition: all 0.2s; }
   /* line 87, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns__link {
     color: inherit; }

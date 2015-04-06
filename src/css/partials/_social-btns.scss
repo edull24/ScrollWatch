@@ -4,7 +4,7 @@
 	$btn-width: scut-em($btn-width-px, $base-font-size);
 	$btn-height: $btn-width;
 	$btn-margin: $btn-width * .75;
-	$transition-speed: 1s;
+	$transition-speed: .2s;
 
 	font-size: scut-rem($base-font-size);
 	color: #000;

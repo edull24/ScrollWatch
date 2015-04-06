@@ -8,6 +8,8 @@
 	padding: scut-em($base-font-size, $base-font-size);
 	background-color: #0681CD;
 	text-align: center;
+	// Fix text flashing in safari during social icon transitions.
+	transform: translateZ(0);
 
 	&__tagline {
 		font-size: scut-em($tagline-font-size, $base-font-size);
