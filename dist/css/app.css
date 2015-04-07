@@ -156,8 +156,17 @@ body {
   margin-bottom: 2em; }
 /* line 8, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_installation-list.scss */
 .installation-list__item .installation-list__code {
-  padding: .25em .5em;
-  margin-left: 1em; }
+  font-size: .9em;
+  padding-left: .5em;
+  padding-right: .5em;
+  margin-top: 1em;
+  display: block;
+  overflow: auto; }
+  @media (min-width: 40.063em) {
+    .installation-list__item .installation-list__code {
+      display: inline;
+      margin-left: 1em;
+      margin-top: 0; } }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
 .feature-list {
