@@ -26,6 +26,7 @@
     "require-dir": "^0.1.0"
   },
   "dependencies": {
-    "animate.css": "^3.2.5"
+    "animate.css": "^3.2.5",
+    "scrollwatch": "^1.0.0"
   }
 }
