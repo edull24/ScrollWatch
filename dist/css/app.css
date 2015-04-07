@@ -235,6 +235,10 @@ body {
   .code-list__term--nested code[class*="language-"] {
     padding: 0.11111em 0.22222em; }
 
+/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_demo.scss */
+.demo {
+  margin-bottom: 2em; }
+
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
 .social-btns {
   font-size: 2rem;
