@@ -2,7 +2,7 @@
 
 var gulp = require('gulp');
 
-gulp.task('default', ['styles', 'markup']);
+gulp.task('default', ['styles', 'scripts', 'markup']);
 
 gulp.task('watch', ['default'], function() {
 

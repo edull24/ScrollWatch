@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
-var del = require('del');
 
 gulp.task('styles', ['sass'], function() {
 
