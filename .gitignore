@@ -11,3 +11,5 @@ node_modules/
 
 # Vagrant
 .vagrant/
+# https://docs.vagrantup.com/v2/synced-folders/virtualbox.html
+httpd.conf
