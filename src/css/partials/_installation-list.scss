@@ -1,0 +1,12 @@
+.installation-list {
+
+	&__item:not(:last-child) {
+		margin-bottom: 2em;
+	}
+
+	// Specificity battle with prism.
+	&__item &__code {
+		padding: .25em .5em;
+		margin-left: 1em;
+	}
+}

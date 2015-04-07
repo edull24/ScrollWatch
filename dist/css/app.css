@@ -15,16 +15,6 @@
 */
 /* Import custom icon font. */
 /* App partials. */
-/* line 2, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_base.scss */
-html, body {
-  height: 100%; }
-
-/* line 6, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_base.scss */
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  color: #fff; }
-
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_util.scss */
 .hidden {
   visibility: hidden; }
@@ -36,6 +26,16 @@ body {
 /* line 10, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_util.scss */
 .fadeInUp {
   animation-duration: .5s; }
+
+/* line 2, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_base.scss */
+html, body {
+  height: 100%; }
+
+/* line 6, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_base.scss */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #fff; }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
 .site-header {
@@ -53,26 +53,6 @@ body {
     font-weight: 200;
     font-style: normal;
     text-rendering: optimizeLegibility; }
-  /* line 23, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
-  .site-header__btn {
-    font-size: 0.77778em;
-    margin-bottom: 1.42857em;
-    padding: 0.5em 1em;
-    color: inherit;
-    text-decoration: none;
-    border: 1px solid #fff;
-    width: 100%;
-    display: inline-block;
-    transition: .4s all; }
-    @media (min-width: 40.063em) {
-      .site-header__btn {
-        width: auto;
-        padding-left: 1.5em;
-        padding-right: 1.5em; } }
-    /* line 41, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
-    .site-header__btn:hover, .site-header__btn:focus {
-      background-color: #fff;
-      color: #0681CD; }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-footer.scss */
 .site-footer {
@@ -142,25 +122,42 @@ body {
     .section__permalink-icon {
       font-size: 0.72222em; }
   /* line 20, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  .section__link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted; }
+  /* line 26, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__header {
     font-size: 2em;
     margin-bottom: 0.5em;
     font-weight: 200;
     font-style: normal;
     text-rendering: optimizeLegibility; }
-    /* line 27, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+    /* line 33, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
     .section__header--group {
       font-size: 1.5em;
       margin-bottom: 0.66667em; }
-  /* line 33, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 39, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__group {
     margin-bottom: 2.5em; }
-  /* line 37, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 43, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__text {
     margin-bottom: 1em; }
-  /* line 41, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 47, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__inline-code[class*="language-"] {
     padding: 0 0.44444em; }
+
+/* line 3, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_download-list.scss */
+.download-list__item:not(:last-child) {
+  margin-bottom: 1em; }
+
+/* line 3, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_installation-list.scss */
+.installation-list__item:not(:last-child) {
+  margin-bottom: 2em; }
+/* line 8, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_installation-list.scss */
+.installation-list__item .installation-list__code {
+  padding: .25em .5em;
+  margin-left: 1em; }
 
 /* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
 .feature-list {

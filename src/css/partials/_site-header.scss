@@ -19,29 +19,4 @@
 		font-style: normal;
 		text-rendering: optimizeLegibility;
 	}
-
-	&__btn {
-		@include media('>=medium') {
-			width: auto;
-			padding-left: scut-em($btn-font-size * 1.5, $btn-font-size);
-			padding-right: scut-em($btn-font-size * 1.5, $btn-font-size);
-		}
-
-		font-size: scut-em($btn-font-size, $base-font-size);
-		margin-bottom: scut-em(40px, $btn-font-size);
-		padding: scut-em($btn-font-size / 2, $btn-font-size) scut-em($btn-font-size, $btn-font-size);
-		color: inherit;
-		text-decoration: none;
-		border: 1px solid #fff;
-		width: 100%;
-		display: inline-block;
-		transition: .4s all;
-
-		&:hover,
-		&:focus {
-			background-color: #fff;
-			color: #0681CD;
-		}
-
-	}
 }
