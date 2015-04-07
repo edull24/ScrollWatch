@@ -24,8 +24,8 @@ var config = {
 	watch: '[data-scroll-watch]',
 	watchOnce: true,
 	inViewClass: 'scroll-watch-in-view',
-	scrollDebounce: 200,
-	resizeDebounce: 500,
+	scrollThrottle: 250,
+	resizeThrottle: 250,
 	watchOffset: 0,
 	infiniteScroll: false,
 	infiniteOffset: 0,
@@ -71,6 +71,43 @@ var extend = function(retObj) {
 
 };
 
+var throttle = function (fn, threshhold, scope) {
+
+	threshhold = threshhold || 250;
+
+	var last;
+	var deferTimer;
+
+	return function () {
+
+		var context = scope || this;
+		var now = +new Date();
+		var args = arguments;
+
+		if (last && now < last + threshhold) {
+
+			window.clearTimeout(deferTimer);
+
+			deferTimer = setTimeout(function () {
+
+				last = now;
+
+				fn.apply(context, args);
+
+			}, threshhold);
+
+		} else {
+
+			last = now;
+
+			fn.apply(context, args);
+
+		}
+
+	};
+
+};
+
 // Get the scrolling container element to watch if it's not the default window/documentElement.
 var saveContainerElement = function() {
 
@@ -101,13 +138,23 @@ var checkViewport = function(eventType) {
 
 	checkElements.call(this, eventType);
 	checkInfinite.call(this, eventType);
-	saveScrollPosition.call(this);
+
+	// Chrome does not return 0,0 for scroll position when reloading a page
+	// that was previously scrolled. To combat this, we will leave the scroll
+	// position at the default 0,0 when a page is first loaded.
+	if (eventType !== initEvent) {
+
+		saveScrollPosition.call(this);
+
+	}
 
 };
 
 // Determine if the watched elements are viewable within the
 // scrolling container.
 var checkElements = function(eventType) {
+
+	// console.log('checkElements eventType: ' + eventType);
 
 	var data = instanceData[this._id];
 	var len = data.elements.length;
@@ -232,28 +279,24 @@ var checkInfinite = function(eventType) {
 
 };
 
-var clearDebounceTimer = function() {
-
-	clearTimeout(instanceData[this._id].debounceTimer);
-
-};
-
 // Add listeners to the scrolling container for each instance.
 var addListeners = function() {
 
+	var data = instanceData[this._id];
 	var scrollingElement = getScrollingElement.call(this);
 
-	scrollingElement.addEventListener('scroll', instanceData[this._id].handler, false);
-	scrollingElement.addEventListener('resize', instanceData[this._id].handler, false);
+	scrollingElement.addEventListener('scroll', data.scrollHandler, false);
+	scrollingElement.addEventListener('resize', data.resizeHandler, false);
 
 };
 
 var removeListeners = function() {
 
+	var data = instanceData[this._id];
 	var scrollingElement = getScrollingElement.call(this);
 
-	scrollingElement.removeEventListener('scroll', instanceData[this._id].handler);
-	scrollingElement.removeEventListener('resize', instanceData[this._id].handler);
+	scrollingElement.removeEventListener('scroll', data.scrollHandler);
+	scrollingElement.removeEventListener('resize', data.resizeHandler);
 
 };
 
@@ -278,10 +321,7 @@ var getViewportSize = function() {
 // Get the scrollbar position of the scrolling container.
 var getScrollPosition = function() {
 
-	var pos = {
-			left: 0,
-			top: 0
-		};
+	var pos = {};
 	var container;
 
 	if (isContainerWindow.call(this)) {
@@ -438,51 +478,62 @@ var mergeOptions = function(opts) {
 
 };
 
+var handler = function(e) {
+
+	var eventType = e.type;
+
+	// For scroll events, only check the viewport if something
+	// has changed. Fixes issues when using gestures on a page
+	// that doesn't need to scroll. An event would still fire,
+	// but the position didn't change  because the
+	// window/container "bounced" back into place.
+	if (eventType === 'resize' || hasScrollPositionChanged.call(this, 'x') || hasScrollPositionChanged.call(this, 'y')) {
+
+		checkViewport.call(this, eventType);
+
+	}
+
+};
+
 var ScrollWatch = function(opts) {
 
-	Object.defineProperty(this, '_id', {value: instanceId++});
+	// Protect against missing new keyword.
+	if (this instanceof ScrollWatch) {
 
-	// Keep all instance data private, except for the '_id', which will
-	// be the key to get the private data for a specific instance.
+		var data;
 
-	instanceData[this._id] = {
+		Object.defineProperty(this, '_id', {value: instanceId++});
 
-		config: {},
-		elements: [],
-		lastScrollPosition: {},
-		debounceTimer: null,
-		isInfiniteScrollPaused: false,
+		// Keep all instance data private, except for the '_id', which will
+		// be the key to get the private data for a specific instance.
+
+		data = instanceData[this._id] = {
+
+			config: {},
+			// The elements to watch for this instance.
+			elements: [],
+			lastScrollPosition: {top: 0, left: 0},
+			isInfiniteScrollPaused: false
+
+		};
+
+		mergeOptions.call(this, opts);
 
 		// In order to remove listeners later and keep a correct reference
 		// to 'this', give each instance it's own event handler.
-		handler: function(e) {
+		data.scrollHandler = throttle(handler.bind(this), data.config.scrollThrottle, this);
+		data.resizeHandler = throttle(handler.bind(this), data.config.resizeThrottle, this);
 
-			var data = instanceData[this._id],
-				config = data.config,
-				eventType = e.type,
-				debounce = eventType === 'scroll' ? config.scrollDebounce : config.resizeDebounce;
+		saveContainerElement.call(this);
+		addListeners.call(this);
+		saveElements.call(this);
+		checkViewport.call(this, initEvent);
 
-			clearDebounceTimer.call(this);
+	} else {
 
-			data.debounceTimer = setTimeout(function() {
+		return new ScrollWatch(opts);
 
-				checkViewport.call(this, eventType);
-
-			// Bind the instance to the function.
-			}.bind(this), debounce);
-
-		// Bind the instance to the method.
-		}.bind(this)
-
-	};
-
-	mergeOptions.call(this, opts);
-	saveContainerElement.call(this);
-	addListeners.call(this);
-	saveElements.call(this);
-	saveScrollPosition.call(this);
-	checkElements.call(this, initEvent);
-	checkInfinite.call(this, initEvent);
+	}
 
 };
 
@@ -499,7 +550,6 @@ ScrollWatch.prototype = {
 	destroy: function() {
 
 		removeListeners.call(this);
-		clearDebounceTimer.call(this);
 		delete instanceData[this._id];
 
 	},
