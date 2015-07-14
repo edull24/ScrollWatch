@@ -24,6 +24,10 @@ var config = {
 	watch: '[data-scroll-watch]',
 	watchOnce: true,
 	inViewClass: 'scroll-watch-in-view',
+	debounce: false,
+	debounceTriggerLeading: false,
+	scrollDebounce: 250,
+	resizeDebounce: 250,
 	scrollThrottle: 250,
 	resizeThrottle: 250,
 	watchOffset: 0,
@@ -103,6 +107,70 @@ var throttle = function (fn, threshhold, scope) {
 			fn.apply(context, args);
 
 		}
+
+	};
+
+};
+
+// http://underscorejs.org/#debounce
+var debounce = function(func, wait, immediate) {
+
+	var timeout;
+	var args;
+	var context;
+	var timestamp;
+	var result;
+
+	var later = function() {
+
+		var last = new Date().getTime() - timestamp;
+
+		if (last < wait && last >= 0) {
+
+			timeout = setTimeout(later, wait - last);
+
+		} else {
+
+			timeout = null;
+
+			if (!immediate) {
+
+				result = func.apply(context, args);
+
+				if (!timeout) {
+
+					context = args = null;
+
+				}
+
+			}
+
+		}
+
+	};
+
+	return function() {
+
+		var callNow = immediate && !timeout;
+
+		context = this;
+		args = arguments;
+		timestamp = new Date().getTime();
+
+		if (!timeout) {
+
+			timeout = setTimeout(later, wait);
+
+		}
+
+		if (callNow) {
+
+			result = func.apply(context, args);
+			context = args = null;
+
+		}
+
+		return result;
 
 	};
 
@@ -521,8 +589,17 @@ var ScrollWatch = function(opts) {
 
 		// In order to remove listeners later and keep a correct reference
 		// to 'this', give each instance it's own event handler.
-		data.scrollHandler = throttle(handler.bind(this), data.config.scrollThrottle, this);
-		data.resizeHandler = throttle(handler.bind(this), data.config.resizeThrottle, this);
+		if (data.config.debounce) {
+
+			data.scrollHandler = debounce(handler.bind(this), data.config.scrollDebounce, data.config.debounceTriggerLeading);
+			data.resizeHandler = debounce(handler.bind(this), data.config.resizeDebounce, data.config.debounceTriggerLeading);
+
+		} else {
+
+			data.scrollHandler = throttle(handler.bind(this), data.config.scrollThrottle, this);
+			data.resizeHandler = throttle(handler.bind(this), data.config.resizeThrottle, this);
+
+		}
 
 		saveContainerElement.call(this);
 		addListeners.call(this);

@@ -1,9 +1,9 @@
 {
   "name": "scrollwatch",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Evan Dull <evandull@gmail.com>",
   "description": "Easily add lazy loading, infinite scrolling, or any other dynamic interaction based on scroll position (with no dependencies).",
-  "main": "./dist/ScrollWatch-1.0.0.min.js",
+  "main": "./dist/ScrollWatch-1.1.0.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/edull24/ScrollWatch.git"
