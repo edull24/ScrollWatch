@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "animate.css": "^3.2.5",
-    "scrollwatch": "^1.0.0"
+    "scrollwatch": "^1.1.0"
   }
 }

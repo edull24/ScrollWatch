@@ -201,13 +201,13 @@
 
 			<ul class="download-list">
 				<li class="download-list__item animated sw-fadeIn">
-					<a class="section__link" href="https://raw.githubusercontent.com/edull24/ScrollWatch/master/dist/ScrollWatch-1.0.0.js" download="ScrollWatch-1.0.0.js">Uncompressed</a>
+					<a class="section__link" href="https://raw.githubusercontent.com/edull24/ScrollWatch/master/dist/ScrollWatch-1.1.0.js" download="ScrollWatch-1.1.0.js">Uncompressed</a>
 				</li>
 				<li class="download-list__item animated sw-fadeIn">
-					<a class="section__link" href="https://raw.githubusercontent.com/edull24/ScrollWatch/master/dist/ScrollWatch-1.0.0.min.js" download="ScrollWatch-1.0.0.min.js">Compressed</a>
+					<a class="section__link" href="https://raw.githubusercontent.com/edull24/ScrollWatch/master/dist/ScrollWatch-1.1.0.min.js" download="ScrollWatch-1.1.0.min.js">Compressed</a>
 				</li>
 				<li class="download-list__item animated sw-fadeIn">
-					<a class="section__link" href="https://raw.githubusercontent.com/edull24/ScrollWatch/master/dist/ScrollWatch-1.0.0.min.js.map" download="ScrollWatch-1.0.0.min.js.map">Source Map</a>
+					<a class="section__link" href="https://raw.githubusercontent.com/edull24/ScrollWatch/master/dist/ScrollWatch-1.1.0.min.js.map" download="ScrollWatch-1.1.0.min.js.map">Source Map</a>
 				</li>
 			</ul>
 
@@ -250,7 +250,7 @@
 				<li class="feature-list__item animated hidden">Watches vertical and horizontal scrolling</li>
 				<li class="feature-list__item animated hidden">Supports infinite scrolling out of the box</li>
 				<li class="feature-list__item animated hidden">UMD wrapper for use in AMD, CommonJS or global environment</li>
-				<li class="feature-list__item animated hidden">Scroll/Resize handlers are throttled, so your cpu lives to see tomorrow</li>
+				<li class="feature-list__item animated hidden">Scroll/Resize handlers are throttled or debounced, so your cpu lives to see tomorrow</li>
 				<li class="feature-list__item animated hidden">No dependencies</li>
 				<li class="feature-list__item animated hidden"><span>Modern browser support and IE10+ (IE9+ with <a class="feature-list__link" href="//github.com/eligrey/classList.js/">classList.js</a> polyfill)</span></li>
 				<li class="feature-list__item animated hidden">&lt; 2k gzipped and minified</li>
@@ -359,6 +359,34 @@
 					</dt>
 					<dd class="code-list__description animated sw-fadeIn">
 						Class applied to elements that are in view.
+					</dd>
+
+					<dt class="code-list__term animated sw-fadeIn">
+						<code class="language-javascript">debounce: false</code>
+					</dt>
+					<dd class="code-list__description animated sw-fadeIn">
+						True to debounce scroll and resize events, false to throttle.
+					</dd>
+
+					<dt class="code-list__term animated sw-fadeIn">
+						<code class="language-javascript">debounceTriggerLeading: false</code>
+					</dt>
+					<dd class="code-list__description animated sw-fadeIn">
+						True to process scroll and resize events on the leading edge, false for the trailing edge.
+					</dd>
+
+					<dt class="code-list__term animated sw-fadeIn">
+						<code class="language-javascript">scrollDebounce: 250</code>
+					</dt>
+					<dd class="code-list__description animated sw-fadeIn">
+						Number of milliseconds to wait since the last scroll event before processing the event.
+					</dd>
+
+					<dt class="code-list__term animated sw-fadeIn">
+						<code class="language-javascript">resizeDebounce: 250</code>
+					</dt>
+					<dd class="code-list__description animated sw-fadeIn">
+						Number of milliseconds to wait since the last resize event before processing the event.
 					</dd>
 
 					<dt class="code-list__term animated sw-fadeIn">

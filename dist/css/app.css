@@ -15,29 +15,29 @@
 */
 /* Import custom icon font. */
 /* App partials. */
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_util.scss */
+/* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_util.scss */
 .hidden {
   visibility: hidden; }
 
-/* line 6, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_util.scss */
+/* line 6, /Users/edull/dev/ScrollWatch/src/css/partials/_util.scss */
 .sw-fadeInUp, .sw-fadeIn {
   visibility: hidden; }
 
-/* line 10, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_util.scss */
+/* line 10, /Users/edull/dev/ScrollWatch/src/css/partials/_util.scss */
 .fadeInUp {
   animation-duration: .5s; }
 
-/* line 2, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_base.scss */
+/* line 2, /Users/edull/dev/ScrollWatch/src/css/partials/_base.scss */
 html, body {
   height: 100%; }
 
-/* line 6, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_base.scss */
+/* line 6, /Users/edull/dev/ScrollWatch/src/css/partials/_base.scss */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #fff; }
 
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+/* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_site-header.scss */
 .site-header {
   font-size: 2.25rem;
   margin-bottom: 1.38889em;
@@ -45,7 +45,7 @@ body {
   background-color: #0681CD;
   text-align: center;
   transform: translateZ(0); }
-  /* line 14, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  /* line 14, /Users/edull/dev/ScrollWatch/src/css/partials/_site-header.scss */
   .site-header__tagline {
     font-size: 0.77778em;
     margin-bottom: 1.42857em;
@@ -54,14 +54,14 @@ body {
     font-style: normal;
     text-rendering: optimizeLegibility; }
 
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_site-footer.scss */
+/* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_site-footer.scss */
 .site-footer {
   font-size: 1rem;
   background-color: #0681CD;
   padding: 2em;
   text-align: center; }
 
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+/* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
 .logo {
   font-size: 2.375rem;
   margin-bottom: 1.05263em;
@@ -76,11 +76,11 @@ body {
     .logo {
       font-size: 8.75rem;
       margin-bottom: 0.46429em; } }
-  /* line 23, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 23, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
   .logo__letter {
     font-weight: 200;
     font-style: normal; }
-    /* line 27, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+    /* line 27, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
     .logo__letter--icon {
       font-size: 1.97368em;
       display: inline-block;
@@ -90,71 +90,71 @@ body {
       animation-duration: 1s;
       animation-name: logo-search;
       transition: font-size 1s, top 1s, left 1s; }
-  /* line 46, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 46, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
   .logo__letter:not(.logo__letter--icon) {
     animation-name: fadeIn;
     animation-delay: 1s; }
 
 @keyframes logo-search {
 
-  /* line 58, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 58, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
   33% {
     transform: translateX(100%); }
 
-  /* line 62, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 62, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
   66% {
     transform: translateX(-100%); }
 
-  /* line 66, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_logo.scss */
+  /* line 66, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
   100% {
     transform: translateX(0); } }
 
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+/* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_section.scss */
 .section {
   font-size: 1.125rem;
   margin: 0 2em 5em 2em;
   color: #333; }
-  /* line 11, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 11, /Users/edull/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__permalink {
     text-decoration: none;
     color: inherit; }
-    /* line 15, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+    /* line 15, /Users/edull/dev/ScrollWatch/src/css/partials/_section.scss */
     .section__permalink-icon {
       font-size: 0.72222em; }
-  /* line 20, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 20, /Users/edull/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__link {
     color: inherit;
     text-decoration: none;
     border-bottom: 1px dotted; }
-  /* line 26, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 26, /Users/edull/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__header {
     font-size: 2em;
     margin-bottom: 0.5em;
     font-weight: 200;
     font-style: normal;
     text-rendering: optimizeLegibility; }
-    /* line 33, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+    /* line 33, /Users/edull/dev/ScrollWatch/src/css/partials/_section.scss */
     .section__header--group {
       font-size: 1.5em;
       margin-bottom: 0.66667em; }
-  /* line 39, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 39, /Users/edull/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__group {
     margin-bottom: 2.5em; }
-  /* line 43, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 43, /Users/edull/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__text {
     margin-bottom: 1em; }
-  /* line 47, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_section.scss */
+  /* line 47, /Users/edull/dev/ScrollWatch/src/css/partials/_section.scss */
   .section__inline-code[class*="language-"] {
     padding: 0 0.44444em; }
 
-/* line 3, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_download-list.scss */
+/* line 3, /Users/edull/dev/ScrollWatch/src/css/partials/_download-list.scss */
 .download-list__item:not(:last-child) {
   margin-bottom: 1em; }
 
-/* line 3, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_installation-list.scss */
+/* line 3, /Users/edull/dev/ScrollWatch/src/css/partials/_installation-list.scss */
 .installation-list__item:not(:last-child) {
   margin-bottom: 2em; }
-/* line 8, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_installation-list.scss */
+/* line 8, /Users/edull/dev/ScrollWatch/src/css/partials/_installation-list.scss */
 .installation-list__item .installation-list__code {
   font-size: .9em;
   padding-left: .5em;
@@ -168,7 +168,7 @@ body {
       margin-left: 1em;
       margin-top: 0; } }
 
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
+/* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_feature-list.scss */
 .feature-list {
   font-size: 1.125rem;
   color: #fff;
@@ -180,7 +180,7 @@ body {
   justify-content: center;
   align-content: flex-start;
   align-items: flex-start; }
-  /* line 16, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
+  /* line 16, /Users/edull/dev/ScrollWatch/src/css/partials/_feature-list.scss */
   .feature-list__item {
     background-color: #0681CD;
     padding: 2em;
@@ -195,74 +195,74 @@ body {
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 18.77778em; }
-  /* line 32, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_feature-list.scss */
+  /* line 32, /Users/edull/dev/ScrollWatch/src/css/partials/_feature-list.scss */
   .feature-list__link {
     color: inherit;
     text-decoration: none;
     border-bottom: 1px dotted #fff; }
 
 /* Override reset value so code blocks scroll. */
-/* line 2, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-block.scss */
+/* line 2, /Users/edull/dev/ScrollWatch/src/css/partials/_code-block.scss */
 .code-block[class*="language-"] {
   font-size: 1.125rem;
   word-wrap: normal;
   -webkit-overflow-scrolling: touch; }
 
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+/* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_code-list.scss */
 .code-list {
   font-size: 1.125rem;
   /* Prism override. */ }
-  /* line 8, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  /* line 8, /Users/edull/dev/ScrollWatch/src/css/partials/_code-list.scss */
   .code-list__term {
     margin-bottom: .5em; }
-  /* line 12, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  /* line 12, /Users/edull/dev/ScrollWatch/src/css/partials/_code-list.scss */
   .code-list__description {
     margin-bottom: 1.5em;
     margin-left: 1em; }
-  /* line 18, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  /* line 18, /Users/edull/dev/ScrollWatch/src/css/partials/_code-list.scss */
   .code-list__term code[class*="language-"] {
     display: inline-block;
     padding: 0.22222em 0.44444em;
     overflow: auto;
     max-width: 100%; }
-  /* line 25, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  /* line 25, /Users/edull/dev/ScrollWatch/src/css/partials/_code-list.scss */
   .code-list__term--nested {
     margin-left: 2em; }
-  /* line 29, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  /* line 29, /Users/edull/dev/ScrollWatch/src/css/partials/_code-list.scss */
   .code-list__description--nested {
     margin-left: 3em; }
-  /* line 33, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_code-list.scss */
+  /* line 33, /Users/edull/dev/ScrollWatch/src/css/partials/_code-list.scss */
   .code-list__term--nested code[class*="language-"] {
     padding: 0.11111em 0.22222em; }
 
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_demo.scss */
+/* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_demo.scss */
 .demo {
   margin-bottom: 2em; }
 
-/* line 1, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+/* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
 .social-btns {
   font-size: 2rem;
   color: #000;
   text-align: center;
   position: relative;
   transition: padding 0.2s; }
-  /* line 15, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 15, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected {
     padding-bottom: 2.4em; }
-  /* line 21, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 21, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:not(.is-selected) > .social-btns__icon {
     opacity: 0;
     z-index: -1; }
-  /* line 26, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 26, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:first-child > .social-btns__icon {
     transform: translateX(2.8em); }
-  /* line 30, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 30, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns.has-selected > .social-btns__btn:last-child > .social-btns__icon {
     transform: translateX(-2.8em); }
-  /* line 36, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 36, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns--footer {
     margin-bottom: 0.625em; }
-  /* line 40, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 40, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns--nested {
     color: inherit;
     position: absolute;
@@ -272,26 +272,26 @@ body {
     z-index: -1;
     opacity: 0;
     transition: all 0.2s; }
-  /* line 51, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 51, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns__btn {
     display: inline-block;
     width: 1.6em;
     height: 1.6em;
     margin-right: 1.2em; }
-    /* line 57, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    /* line 57, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn:last-child {
       margin-right: 0; }
-    /* line 61, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    /* line 61, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn.is-selected .social-btns--nested {
       opacity: 1;
       z-index: 1; }
-    /* line 66, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    /* line 66, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn--twitter {
       color: #00aced; }
-    /* line 70, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+    /* line 70, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
     .social-btns__btn--facebook {
       color: #3b5998; }
-  /* line 76, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 76, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns__icon {
     position: relative;
     width: 100%;
@@ -301,27 +301,27 @@ body {
     cursor: pointer;
     z-index: 1;
     transition: all 0.2s; }
-  /* line 87, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_social-btns.scss */
+  /* line 87, /Users/edull/dev/ScrollWatch/src/css/partials/_social-btns.scss */
   .social-btns__link {
     color: inherit; }
 
-/* line 3, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
+/* line 3, /Users/edull/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
 .sw-icon--btn {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%; }
-  /* line 10, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
+  /* line 10, /Users/edull/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
   .sw-icon--btn::before {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
-/* line 21, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
+/* line 21, /Users/edull/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
 .sw-icon--repo-forked.sw-icon--btn, .sw-icon--share.sw-icon--btn, .sw-icon--quill.sw-icon--btn {
   font-size: .9em; }
-/* line 25, /Users/edull/GoogleDrive/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
+/* line 25, /Users/edull/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
 .sw-icon--group-add.sw-icon--btn {
   font-size: 1.1em; }
 

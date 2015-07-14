@@ -8,7 +8,7 @@ gulp.task('scripts', ['clean-scripts'], function() {
 	return gulp.src([
 			'./src/js/vendor/classList.js',
 			'./src/js/vendor/prism.js',
-			'./node_modules/scrollwatch/dist/ScrollWatch-1.0.0.min.js',
+			'./node_modules/scrollwatch/dist/ScrollWatch-1.1.0.min.js',
 			'./src/js/app.js'
 		])
 		.pipe(plugins.sourcemaps.init())
