@@ -1,11 +1,10 @@
-@import url('../../src/css/vendor/reset.css');
-@import url('../../src/css/vendor/prism.css');
-@import url('../../node_modules/animate.css/source/_base.css');
-@import url('../../node_modules/animate.css/source/attention_seekers/pulse.css');
-@import url('../../node_modules/animate.css/source/fading_entrances/fadeIn.css');
-@import url('../../node_modules/animate.css/source/fading_entrances/fadeInUp.css');
-@import url('../../src/css/fonts/scrollwatch/style.css');
 /* Import vendor css. File contents will get inlined during build process. */
+@import url("../../src/css/vendor/reset.css");
+@import url("../../src/css/vendor/prism.css");
+@import url("../../node_modules/animate.css/source/_base.css");
+@import url("../../node_modules/animate.css/source/attention_seekers/pulse.css");
+@import url("../../node_modules/animate.css/source/fading_entrances/fadeIn.css");
+@import url("../../node_modules/animate.css/source/fading_entrances/fadeInUp.css");
 /* Vendor SCSS. */
 /*
 * Scut, a collection of Sass utilities
@@ -14,21 +13,24 @@
 * Docs at http://davidtheclark.github.io/scut
 */
 /* Import custom icon font. */
+@import url("../../src/css/fonts/scrollwatch/style.css");
 /* App partials. */
 /* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_util.scss */
 .hidden {
   visibility: hidden; }
 
-/* line 6, /Users/edull/dev/ScrollWatch/src/css/partials/_util.scss */
-.sw-fadeInUp, .sw-fadeIn {
+/* line 5, /Users/edull/dev/ScrollWatch/src/css/partials/_util.scss */
+.sw-fadeInUp,
+.sw-fadeIn {
   visibility: hidden; }
 
 /* line 10, /Users/edull/dev/ScrollWatch/src/css/partials/_util.scss */
 .fadeInUp {
   animation-duration: .5s; }
 
-/* line 2, /Users/edull/dev/ScrollWatch/src/css/partials/_base.scss */
-html, body {
+/* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_base.scss */
+html,
+body {
   height: 100%; }
 
 /* line 6, /Users/edull/dev/ScrollWatch/src/css/partials/_base.scss */
@@ -69,10 +71,12 @@ body {
   text-align: center;
   white-space: nowrap; }
   @media (min-width: 40.063em) {
+    /* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
     .logo {
       font-size: 4.6875rem;
       margin-bottom: 0.53333em; } }
   @media (min-width: 64.063em) {
+    /* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
     .logo {
       font-size: 8.75rem;
       margin-bottom: 0.46429em; } }
@@ -96,16 +100,11 @@ body {
     animation-delay: 1s; }
 
 @keyframes logo-search {
-
-  /* line 58, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
+  0% { }
   33% {
     transform: translateX(100%); }
-
-  /* line 62, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
   66% {
     transform: translateX(-100%); }
-
-  /* line 66, /Users/edull/dev/ScrollWatch/src/css/partials/_logo.scss */
   100% {
     transform: translateX(0); } }
 
@@ -154,6 +153,7 @@ body {
 /* line 3, /Users/edull/dev/ScrollWatch/src/css/partials/_installation-list.scss */
 .installation-list__item:not(:last-child) {
   margin-bottom: 2em; }
+
 /* line 8, /Users/edull/dev/ScrollWatch/src/css/partials/_installation-list.scss */
 .installation-list__item .installation-list__code {
   font-size: .9em;
@@ -163,6 +163,7 @@ body {
   display: block;
   overflow: auto; }
   @media (min-width: 40.063em) {
+    /* line 8, /Users/edull/dev/ScrollWatch/src/css/partials/_installation-list.scss */
     .installation-list__item .installation-list__code {
       display: inline;
       margin-left: 1em;
@@ -318,9 +319,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
-/* line 21, /Users/edull/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
+
+/* line 19, /Users/edull/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
 .sw-icon--repo-forked.sw-icon--btn, .sw-icon--share.sw-icon--btn, .sw-icon--quill.sw-icon--btn {
   font-size: .9em; }
+
 /* line 25, /Users/edull/dev/ScrollWatch/src/css/partials/_sw-icon.scss */
 .sw-icon--group-add.sw-icon--btn {
   font-size: 1.1em; }
