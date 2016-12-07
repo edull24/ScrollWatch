@@ -15,8 +15,6 @@ var instanceId = 0;
 // Store instance data privately so it can't be accessed/modified.
 var instanceData = {};
 
-var ignoreClass = 'scroll-watch-ignore';
-
 var config = {
 	// The default container is window, but we need the actual
 	// documentElement to determine positioning.
@@ -24,6 +22,7 @@ var config = {
 	watch: '[data-scroll-watch]',
 	watchOnce: true,
 	inViewClass: 'scroll-watch-in-view',
+	ignoreClass: 'scroll-watch-ignore',
 	debounce: false,
 	debounceTriggerLeading: false,
 	scrollDebounce: 250,
@@ -77,10 +76,10 @@ var extend = function(retObj) {
 
 var throttle = function (fn, threshhold, scope) {
 
-	threshhold = threshhold || 250;
-
 	var last;
 	var deferTimer;
+
+	threshhold = threshhold || 250;
 
 	return function () {
 
@@ -190,7 +189,7 @@ var saveContainerElement = function() {
 // Save all elements to watch into an array.
 var saveElements = function() {
 
-	instanceData[this._id].elements = Array.prototype.slice.call(document.querySelectorAll(instanceData[this._id].config.watch + ':not(.' + ignoreClass + ')'));
+	instanceData[this._id].elements = Array.prototype.slice.call(document.querySelectorAll(instanceData[this._id].config.watch + ':not(.' + instanceData[this._id].config.ignoreClass + ')'));
 
 };
 
@@ -269,7 +268,7 @@ var checkElements = function(eventType) {
 					// Flag this element with the ignore class so we
 					// don't store it again if a refresh happens.
 
-					el.classList.add(ignoreClass);
+					el.classList.add(config.ignoreClass);
 
 				}
 
@@ -378,9 +377,9 @@ var getScrollingElement = function() {
 var getViewportSize = function() {
 
 	var size = {
-			w: instanceData[this._id].config.container.clientWidth,
-			h: instanceData[this._id].config.container.clientHeight
-		};
+		w: instanceData[this._id].config.container.clientWidth,
+		h: instanceData[this._id].config.container.clientHeight
+	};
 
 	return size;
 
@@ -416,9 +415,9 @@ var getScrollPosition = function() {
 var getViewableRange = function() {
 
 	var range = {
-			x: {},
-			y: {}
-		};
+		x: {},
+		y: {}
+	};
 	var scrollPos = getScrollPosition.call(this);
 	var viewportSize = getViewportSize.call(this);
 
@@ -439,9 +438,9 @@ var getViewableRange = function() {
 var getElementRange = function(el) {
 
 	var range = {
-			x: {},
-			y: {}
-		};
+		x: {},
+		y: {}
+	};
 	var viewableRange = getViewableRange.call(this);
 	var coords = el.getBoundingClientRect();
 	var containerCoords;
