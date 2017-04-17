@@ -188,7 +188,9 @@ var saveElements = function() {
 // perform comparison checks.
 var saveScrollPosition = function() {
 
-	instanceData[this._id].lastScrollPosition = getScrollPosition.call(this);
+  if (instanceData[this._id]) {
+    instanceData[this._id].lastScrollPosition = getScrollPosition.call(this);
+  }
 
 };
 
@@ -483,6 +485,10 @@ var getScrolledAxis = function() {
 
 var getScrolledDirection = function(axis) {
 
+  if (!instanceData[this._id]) {
+    return scrollDir[axis][0];
+  }
+
 	var scrollDir = {x: ['right', 'left'], y: ['down', 'up']};
 	var position = {x: 'left', y: 'top'};
 	var lastScrollPosition = instanceData[this._id].lastScrollPosition;
@@ -493,6 +499,10 @@ var getScrolledDirection = function(axis) {
 };
 
 var hasScrollPositionChanged = function(axis) {
+
+  if (!instanceData[this._id]) {
+    return false;
+  }
 
 	var position = {x: 'left', y: 'top'};
 	var lastScrollPosition = instanceData[this._id].lastScrollPosition;
