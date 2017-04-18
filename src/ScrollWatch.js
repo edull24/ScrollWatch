@@ -193,13 +193,19 @@ var saveScrollPosition = function() {
 };
 
 var checkViewport = function(eventType) {
+  // Check before each call if instanceData has been destroyed, in case the instace
+  // was destroyed from inside a handler
 
-	checkElements.call(this, eventType);
-	checkInfinite.call(this, eventType);
+  if (!instanceData[this._id]) return
+  checkElements.call(this, eventType);
+  
+  if (!instanceData[this._id]) return
+  checkInfinite.call(this, eventType);
 
 	// Chrome does not return 0,0 for scroll position when reloading a page
 	// that was previously scrolled. To combat this, we will leave the scroll
 	// position at the default 0,0 when a page is first loaded.
+  if (!instanceData[this._id]) return
 	if (eventType !== initEvent) {
 
 		saveScrollPosition.call(this);
