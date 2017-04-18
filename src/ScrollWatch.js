@@ -188,9 +188,7 @@ var saveElements = function() {
 // perform comparison checks.
 var saveScrollPosition = function() {
 
-  if (instanceData[this._id]) {
-    instanceData[this._id].lastScrollPosition = getScrollPosition.call(this);
-  }
+  instanceData[this._id].lastScrollPosition = getScrollPosition.call(this);
 
 };
 
@@ -485,10 +483,6 @@ var getScrolledAxis = function() {
 
 var getScrolledDirection = function(axis) {
 
-  if (!instanceData[this._id]) {
-    return scrollDir[axis][0];
-  }
-
 	var scrollDir = {x: ['right', 'left'], y: ['down', 'up']};
 	var position = {x: 'left', y: 'top'};
 	var lastScrollPosition = instanceData[this._id].lastScrollPosition;
@@ -499,10 +493,6 @@ var getScrolledDirection = function(axis) {
 };
 
 var hasScrollPositionChanged = function(axis) {
-
-  if (!instanceData[this._id]) {
-    return false;
-  }
 
 	var position = {x: 'left', y: 'top'};
 	var lastScrollPosition = instanceData[this._id].lastScrollPosition;
@@ -547,6 +537,12 @@ var mergeOptions = function(opts) {
 };
 
 var handler = function(e) {
+
+  // protect against the instance being destroyed while we still
+  // have queued or pending handler events
+  if (!instanceData[this._id]) {
+    return
+  }
 
 	var eventType = e.type;
 
