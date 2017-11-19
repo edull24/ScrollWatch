@@ -549,10 +549,10 @@ var handler = function(e) {
 
 var ScrollWatch = function(opts) {
 
+	var data;
+
 	// Protect against missing new keyword
 	if (this instanceof ScrollWatch) {
-
-		var data;
 
 		Object.defineProperty(this, '_id', {value: instanceId++});
 
