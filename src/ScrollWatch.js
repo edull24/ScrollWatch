@@ -1,14 +1,13 @@
 'use strict';
 
-// Give each instance on the page a unique ID.
+// Give each instance on the page a unique ID
 var instanceId = 0;
 
-// Store instance data privately so it can't be accessed/modified.
+// Store instance data privately so it can't be accessed/modified
 var instanceData = {};
 
 var config = {
-	// The default container is window, but we need the actual
-	// documentElement to determine positioning.
+	// The default container is window, but we need the actual documentElement to determine positioning.
 	container: window.document.documentElement,
 	watch: '[data-scroll-watch]',
 	watchOnce: true,
@@ -183,15 +182,14 @@ var saveContainerElement = function() {
 
 };
 
-// Save all elements to watch into an array.
+// Save all elements to watch into an array
 var saveElements = function() {
 
 	instanceData[this._id].elements = Array.prototype.slice.call(document.querySelectorAll(instanceData[this._id].config.watch + ':not(.' + instanceData[this._id].config.ignoreClass + ')'));
 
 };
 
-// Save the scroll position of the scrolling container so we can
-// perform comparison checks.
+// Save the scroll position of the scrolling container so we can perform comparison checks
 var saveScrollPosition = function() {
 
 	instanceData[this._id].lastScrollPosition = getScrollPosition.call(this);
@@ -203,9 +201,7 @@ var checkViewport = function(eventType) {
 	checkElements.call(this, eventType);
 	checkInfinite.call(this, eventType);
 
-	// Chrome does not return 0,0 for scroll position when reloading a page
-	// that was previously scrolled. To combat this, we will leave the scroll
-	// position at the default 0,0 when a page is first loaded.
+	// Chrome does not return 0,0 for scroll position when reloading a page that was previously scrolled. To combat this, we will leave the scroll position at the default 0,0 when a page is first loaded.
 	if (eventType !== initEvent) {
 
 		saveScrollPosition.call(this);
@@ -214,11 +210,8 @@ var checkViewport = function(eventType) {
 
 };
 
-// Determine if the watched elements are viewable within the
-// scrolling container.
+// Determine if the watched elements are viewable within the scrolling container
 var checkElements = function(eventType) {
-
-	// console.log('checkElements eventType: ' + eventType);
 
 	var data = instanceData[this._id];
 	var len = data.elements.length;
@@ -234,7 +227,7 @@ var checkElements = function(eventType) {
 
 		el = data.elements[i];
 
-		// Prepare the data to pass to the callback.
+		// Prepare the data to pass to the callback
 		responseData.el = el;
 
 		if (eventType === 'scroll') {
@@ -247,23 +240,20 @@ var checkElements = function(eventType) {
 
 			if (!el.classList.contains(inViewClass)) {
 
-				// Add a class hook and fire a callback for every
-				// element that just came into view.
+				// Add a class hook and fire a callback for every element that just came into view
 
 				el.classList.add(inViewClass);
 				config.onElementInView.call(this, responseData);
 
 				if (config.watchOnce) {
 
-					// Remove this element so we don't check it again
-					// next time.
+					// Remove this element so we don't check it again next time
 
 					data.elements.splice(i, 1);
 					len--;
 					i--;
 
-					// Flag this element with the ignore class so we
-					// don't store it again if a refresh happens.
+					// Flag this element with the ignore class so we don't store it again if a refresh happens
 
 					el.classList.add(config.ignoreClass);
 
@@ -275,8 +265,7 @@ var checkElements = function(eventType) {
 
 			if (el.classList.contains(inViewClass) || eventType === initEvent) {
 
-				// Remove the class hook and fire a callback for every
-				// element that just went out of view.
+				// Remove the class hook and fire a callback for every element that just went out of view
 
 				el.classList.remove(inViewClass);
 				config.onElementOutOfView.call(this, responseData);
@@ -289,9 +278,7 @@ var checkElements = function(eventType) {
 
 };
 
-// Determine if the infinite scroll zone is in view. This could come into
-// view by scrolling or resizing. Initial load must also be accounted
-// for.
+// Determine if the infinite scroll zone is in view. This could come into view by scrolling or resizing. Initial load must also be accounted for.
 var checkInfinite = function(eventType) {
 
 	var data = instanceData[this._id];
@@ -315,15 +302,11 @@ var checkInfinite = function(eventType) {
 
 		for (i = 0; i < 2; i++) {
 
-			// If a scroll event triggered this check, verify the scroll
-			// position actually changed for each axis. This stops
-			// horizontal scrolls from triggering infiniteY callbacks
-			// and vice versa. In other words, only trigger an infinite
-			// callback if that axis was actually scrolled.
+			// If a scroll event triggered this check, verify the scroll position actually changed for each axis. This stops horizontal scrolls from triggering infiniteY callbacks and vice versa. In other words, only trigger an infinite callback if that axis was actually scrolled.
 
 			if ((eventType === 'scroll' && hasScrollPositionChanged.call(this, axis[i]) || eventType === 'resize'|| eventType === 'refresh' || eventType === initEvent) && viewableRange[axis[i]].end + config.infiniteOffset >= scrollSize[i]) {
 
-				// We've scrolled/resized all the way to the right/bottom.
+				// We've scrolled/resized all the way to the right/bottom
 
 				responseData.eventType = eventType;
 
@@ -343,7 +326,7 @@ var checkInfinite = function(eventType) {
 
 };
 
-// Add listeners to the scrolling container for each instance.
+// Add listeners to the scrolling container for each instance
 var addListeners = function() {
 
 	var data = instanceData[this._id];
@@ -370,7 +353,7 @@ var getScrollingElement = function() {
 
 };
 
-// Get the width and height of viewport/scrolling container.
+// Get the width and height of viewport/scrolling container
 var getViewportSize = function() {
 
 	var size = {
@@ -382,7 +365,7 @@ var getViewportSize = function() {
 
 };
 
-// Get the scrollbar position of the scrolling container.
+// Get the scrollbar position of the scrolling container
 var getScrollPosition = function() {
 
 	var pos = {};
@@ -407,8 +390,7 @@ var getScrollPosition = function() {
 
 };
 
-// Get the pixel range currently viewable within the
-// scrolling container.
+// Get the pixel range currently viewable within the scrolling container
 var getViewableRange = function() {
 
 	var range = {
@@ -430,8 +412,7 @@ var getViewableRange = function() {
 
 };
 
-// Get the pixel range of where this element falls within the
-// scrolling container.
+// Get the pixel range of where this element falls within the scrolling container
 var getElementRange = function(el) {
 
 	var range = {
@@ -470,7 +451,7 @@ var getElementRange = function(el) {
 
 };
 
-// Determines which axis was just scrolled (x/horizontal or y/vertical).
+// Determines which axis was just scrolled (x/horizontal or y/vertical)
 var getScrolledAxis = function() {
 
 	if (hasScrollPositionChanged.call(this, 'x')) {
@@ -550,11 +531,7 @@ var handler = function(e) {
 
 	var eventType = e.type;
 
-	// For scroll events, only check the viewport if something
-	// has changed. Fixes issues when using gestures on a page
-	// that doesn't need to scroll. An event would still fire,
-	// but the position didn't change  because the
-	// window/container "bounced" back into place.
+	// For scroll events, only check the viewport if something has changed. Fixes issues when using gestures on a page that doesn't need to scroll. An event would still fire, but the position didn't change  because the window/container "bounced" back into place.
 	if (eventType === 'resize' || hasScrollPositionChanged.call(this, 'x') || hasScrollPositionChanged.call(this, 'y')) {
 
 		checkViewport.call(this, eventType);
@@ -565,20 +542,19 @@ var handler = function(e) {
 
 var ScrollWatch = function(opts) {
 
-	// Protect against missing new keyword.
+	// Protect against missing new keyword
 	if (this instanceof ScrollWatch) {
 
 		var data;
 
 		Object.defineProperty(this, '_id', {value: instanceId++});
 
-		// Keep all instance data private, except for the '_id', which will
-		// be the key to get the private data for a specific instance.
+		// Keep all instance data private, except for the '_id', which will be the key to get the private data for a specific instance
 
 		data = instanceData[this._id] = {
 
 			config: {},
-			// The elements to watch for this instance.
+			// The elements to watch for this instance
 			elements: [],
 			lastScrollPosition: {top: 0, left: 0},
 			isInfiniteScrollPaused: false
@@ -587,8 +563,7 @@ var ScrollWatch = function(opts) {
 
 		mergeOptions.call(this, opts);
 
-		// In order to remove listeners later and keep a correct reference
-		// to 'this', give each instance it's own event handler.
+		// In order to remove listeners later and keep a correct reference to 'this', give each instance it's own event handler
 		if (data.config.debounce) {
 
 			data.scrollHandler = debounce(handler.bind(this), data.config.scrollDebounce, data.config.debounceTriggerLeading);
@@ -616,7 +591,7 @@ var ScrollWatch = function(opts) {
 
 ScrollWatch.prototype = {
 
-	// Should be manually called by user after loading in new content.
+	// Should be manually called by user after loading in new content
 	refresh: function() {
 
 		saveElements.call(this);
