@@ -531,6 +531,13 @@ var handler = function(e) {
 
 	var eventType = e.type;
 
+	// Protect against the instance being destroyed while we still have queued or pending handler events (via @jsonk000)
+	if (!instanceData[this._id]) {
+
+		return;
+
+	}
+
 	// For scroll events, only check the viewport if something has changed. Fixes issues when using gestures on a page that doesn't need to scroll. An event would still fire, but the position didn't change  because the window/container "bounced" back into place.
 	if (eventType === 'resize' || hasScrollPositionChanged.call(this, 'x') || hasScrollPositionChanged.call(this, 'y')) {
 
