@@ -166,12 +166,15 @@ var debounce = function(func, wait, immediate) {
 
 };
 
-// Get the scrolling container element to watch if it's not the default window/documentElement.
+// If a string was passed in as the container element, use it as a selector and query the DOM, otherwise we'll assume a DOM node was passed in
 var saveContainerElement = function() {
 
-	if (!isContainerWindow.call(this)) {
+	var config = instanceData[this._id].config;
 
-		instanceData[this._id].config.container = document.querySelector(instanceData[this._id].config.container);
+	if (typeof config.container === 'string') {
+
+		// A selector was passed in for the container
+		config.container = document.querySelector(config.container);
 
 	}
 
