@@ -270,7 +270,7 @@ var checkElements = function(eventType) {
 
 		} else {
 
-			if (el.classList.contains(inViewClass)) {
+			if (el.classList.contains(inViewClass) || eventType === initEvent) {
 
 				// Remove the class hook and fire a callback for every
 				// element that just went out of view.
