@@ -606,6 +606,30 @@ ScrollWatch.prototype = {
 
 	},
 
+	updateWatchOffsetXLeft: function(offset) {
+
+		instanceData[this._id].config.watchOffsetXLeft = offset;
+
+	},
+
+	updateWatchOffsetXRight: function(offset) {
+
+		instanceData[this._id].config.watchOffsetXRight = offset;
+
+	},
+
+	updateWatchOffsetYTop: function(offset) {
+
+		instanceData[this._id].config.watchOffsetYTop = offset;
+
+	},
+
+	updateWatchOffsetYBottom: function(offset) {
+
+		instanceData[this._id].config.watchOffsetYBottom = offset;
+
+	},
+
 	pauseInfiniteScroll: function() {
 
 		instanceData[this._id].isInfiniteScrollPaused = true;
