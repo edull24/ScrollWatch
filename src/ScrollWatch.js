@@ -20,7 +20,10 @@ var config = {
 	resizeDebounce: 250,
 	scrollThrottle: 250,
 	resizeThrottle: 250,
-	watchOffset: 0,
+	watchOffsetXLeft: 0,
+	watchOffsetXRight: 0,
+	watchOffsetYTop: 0,
+	watchOffsetYBottom: 0,
 	infiniteScroll: false,
 	infiniteOffset: 0,
 	onElementInView: function(){},
@@ -515,15 +518,19 @@ var isElementInView = function(el) {
 
 };
 
-var isElementInVerticalView = function(elRange, viewableRange, offset) {
+var isElementInVerticalView = function(elRange, viewableRange) {
 
-	return elRange.y.start < viewableRange.y.end + offset && elRange.y.end > viewableRange.y.start - offset;
+	var config = instanceData[this._id].config;
+
+	return elRange.y.start < viewableRange.y.end + config.watchOffsetYBottom && elRange.y.end > viewableRange.y.start - config.watchOffsetYTop;
 
 };
 
-var isElementInHorizontalView = function(elRange, viewableRange, offset) {
+var isElementInHorizontalView = function(elRange, viewableRange) {
 
-	return elRange.x.start < viewableRange.x.end + offset && elRange.x.end > viewableRange.x.start - offset;
+	var config = instanceData[this._id].config;
+
+	return elRange.x.start < viewableRange.x.end + config.watchOffsetXRight && elRange.x.end > viewableRange.x.start - config.watchOffsetXLeft;
 
 };
 
