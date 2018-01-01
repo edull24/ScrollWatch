@@ -493,9 +493,8 @@ var isElementInView = function(el) {
 
 	var viewableRange = getViewableRange.call(this);
 	var elRange = getElementRange.call(this, el);
-	var offset = instanceData[this._id].config.watchOffset;
 
-	return isElementInVerticalView(elRange, viewableRange, offset) && isElementInHorizontalView(elRange, viewableRange, offset);
+	return isElementInVerticalView.call(this, elRange, viewableRange) && isElementInHorizontalView.call(this, elRange, viewableRange);
 
 };
 
