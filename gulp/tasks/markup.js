@@ -9,7 +9,7 @@ gulp.task('markup', ['styles', 'scripts'], function() {
 	var cssManifest = JSON.parse(fs.readFileSync('./dist/css/rev-manifest.json', {encoding: 'utf-8'}));
 	var jsManifest = JSON.parse(fs.readFileSync('./dist/js/rev-manifest.json', {encoding: 'utf-8'}));
 
-	return gulp.src('./src/index.html')
+	return gulp.src(['./src/index.html', './src/index-1.2.0.html'])
 		.pipe(plugins.replace('app.css', cssManifest['app.css']))
 		.pipe(plugins.replace('app.js', jsManifest['app.js']))
 		.pipe(plugins.htmlmin({

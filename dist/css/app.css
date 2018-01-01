@@ -55,6 +55,12 @@ body {
     font-weight: 200;
     font-style: normal;
     text-rendering: optimizeLegibility; }
+  /* line 23, /Users/edull/dev/ScrollWatch/src/css/partials/_site-header.scss */
+  .site-header__legacy-docs-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+    font-size: 0.5em; }
 
 /* line 1, /Users/edull/dev/ScrollWatch/src/css/partials/_site-footer.scss */
 .site-footer {

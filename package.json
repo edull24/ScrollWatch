@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "gulp",
+    "dev": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -28,6 +30,6 @@
   },
   "dependencies": {
     "animate.css": "^3.2.5",
-    "scrollwatch": "^1.2.0"
+    "scrollwatch": "^2.0.1"
   }
 }
